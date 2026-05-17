@@ -1,5 +1,5 @@
 /**
- * FTC Robotics Hack Day — Interest Form generator
+ * FTC Robotics Milano — Team Contact Form generator
  *
  * COME USARLO:
  *  1. Vai su https://script.google.com
@@ -11,19 +11,21 @@
  *  7. Apri View → Logs (o Esecuzioni → ultimo log) per vedere i link
  *
  * Il form viene creato sul tuo Google Drive personale.
+ * Lo scopo è raccogliere contatti per il team FTC (non iscrizioni a un evento).
  */
 
 function createForm() {
-  var form = FormApp.create('FTC Robotics Hack Day — Interest Form')
+  var form = FormApp.create('FTC Robotics Milano — Contatti per il team')
     .setDescription(
-      "Ciao! Questo modulo serve a raccogliere il tuo interesse per l'Hack Day FTC e per le future attività di robotica. " +
-      "Non è una selezione: vogliamo solo capire chi sei e cosa ti incuriosisce. Richiede meno di 2 minuti."
+      "Ciao! Lascia i tuoi contatti per restare aggiornato sulle attività del team FTC " +
+      "o per valutare di unirti. Nessun impegno: ti scriviamo solo per invitarti " +
+      "alle prossime occasioni. Richiede meno di 2 minuti."
     )
     .setCollectEmail(false)
     .setLimitOneResponsePerUser(false)
     .setProgressBar(true)
     .setConfirmationMessage(
-      'Grazie! Ti contatteremo presto con le informazioni sull\'Hack Day e sulle prossime attività FTC.'
+      'Grazie! Ti contatteremo presto con informazioni sulle prossime attività del team FTC.'
     );
 
   // ---- SEZIONE 1 — Le tue informazioni ----
@@ -101,8 +103,9 @@ function createForm() {
   form.addPageBreakItem().setTitle('Disponibilità');
 
   form.addCheckboxItem()
-    .setTitle('Quando saresti disponibile per le attività FTC?')
+    .setTitle('Quando saresti disponibile per le attività del team?')
     .setChoiceValues([
+      'Pomeriggi infrasettimanali',
       'Weekend',
       'Attività estive',
       'Possibili competizioni e trasferte in futuro',
@@ -113,7 +116,7 @@ function createForm() {
   // ---- SEZIONE 6 — Collaborazione genitori ----
   form.addPageBreakItem()
     .setTitle('Collaborazione genitori')
-    .setHelpText('Ai genitori: se ti va di dare una mano in qualche modo, in quale area ti senti più a tuo agio? (facoltativo)');
+    .setHelpText('Ai genitori: se vi va di dare una mano in qualche modo, in quale area vi sentite più a vostro agio? (facoltativo)');
 
   form.addCheckboxItem()
     .setTitle('Aree in cui un genitore può contribuire')
@@ -128,7 +131,21 @@ function createForm() {
     ])
     .setRequired(false);
 
-  // ---- SEZIONE 7 — Una domanda libera ----
+  // ---- SEZIONE 7 — Come ci hai conosciuti ----
+  form.addPageBreakItem().setTitle('Come ci hai conosciuti');
+
+  form.addMultipleChoiceItem()
+    .setTitle('Da dove arrivi?')
+    .setChoiceValues([
+      'Ero all\'Hack Day del 29 maggio',
+      'Passaparola (amici, compagni di scuola)',
+      'Tramite la scuola / un docente',
+      'Social o ricerca online',
+      'Altro'
+    ])
+    .setRequired(false);
+
+  // ---- SEZIONE 8 — Una domanda libera ----
   form.addPageBreakItem().setTitle('Una domanda libera');
 
   form.addParagraphTextItem()
@@ -136,7 +153,7 @@ function createForm() {
     .setRequired(false);
 
   // ---- Crea anche il foglio risposte collegato ----
-  var ss = SpreadsheetApp.create('FTC Hack Day — Risposte');
+  var ss = SpreadsheetApp.create('FTC Robotics Milano — Contatti');
   form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
 
   // ---- Output ----
