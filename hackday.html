@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hack Day 28–29 maggio — FTC Milano</title>
+<meta name="description" content="Due giorni aperti di robotica, coding, CAD e LEGO. Programma e dettagli dell'evento." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{ink:'#0b1220',accent:'#f97316',accent2:'#fb923c'}}}}</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-slate-50 text-ink font-sans antialiased">
+
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+      <span class="inline-block w-7 h-7 rounded-lg bg-ink text-accent grid place-items-center text-sm">⚙</span>
+      <span>FTC Hack Day</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="ml-2 px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent2" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+  <div id="navMobile" class="hidden md:hidden border-t border-slate-200 bg-white">
+    <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="mt-1 px-3 py-2 rounded-lg bg-accent text-white text-center" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+</header>
+
+<section class="bg-gradient-to-br from-ink to-slate-800 text-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold tracking-wide uppercase">
+      <span class="w-2 h-2 rounded-full bg-accent"></span> Evento aperto
+    </p>
+    <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold">Hack Day FTC<br/><span class="text-accent">28–29 maggio</span></h1>
+    <p class="mt-5 text-lg text-slate-300 max-w-2xl">
+      Due giorni per provare la robotica. Vieni, guarda, costruisci, sbaglia, ricostruisci. Niente prerequisiti: solo curiosità.
+    </p>
+  </div>
+</section>
+
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="text-2xl sm:text-3xl font-bold">Cosa succede nei due giorni</h2>
+  <div class="mt-8 grid md:grid-cols-2 gap-5">
+    <div class="p-6 rounded-xl bg-white border border-slate-200">
+      <div class="text-2xl">🤖</div>
+      <h3 class="mt-2 font-bold">Demo di robot FTC</h3>
+      <p class="mt-1 text-sm text-slate-600">Robot in azione. Vedi come si muovono, come prendono oggetti, come sono fatti dentro.</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white border border-slate-200">
+      <div class="text-2xl">🎯</div>
+      <h3 class="mt-2 font-bold">Mini-challenge a squadre</h3>
+      <p class="mt-1 text-sm text-slate-600">Si formano gruppi al volo e si prova a risolvere piccole sfide di engineering.</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white border border-slate-200">
+      <div class="text-2xl">🧱</div>
+      <h3 class="mt-2 font-bold">Stazione LEGO</h3>
+      <p class="mt-1 text-sm text-slate-600">Costruisci meccanismi, prova trasmissioni e ingranaggi. Funziona a tutte le età.</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white border border-slate-200">
+      <div class="text-2xl">🖨️</div>
+      <h3 class="mt-2 font-bold">Stampa 3D dal vivo</h3>
+      <p class="mt-1 text-sm text-slate-600">Vedi un pezzo nascere strato dopo strato. Capisci come si progetta e si stampa.</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white border border-slate-200">
+      <div class="text-2xl">⚙️</div>
+      <h3 class="mt-2 font-bold">Esperimenti di engineering</h3>
+      <p class="mt-1 text-sm text-slate-600">Sensori, motori, piccoli circuiti. Tocca con mano la differenza tra teoria e pratica.</p>
+    </div>
+    <div class="p-6 rounded-xl bg-white border border-slate-200">
+      <div class="text-2xl">💬</div>
+      <h3 class="mt-2 font-bold">Q&A con mentor e ragazzi</h3>
+      <p class="mt-1 text-sm text-slate-600">Chiedi tutto: come funziona la stagione, quanto tempo serve, cosa si impara davvero.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold">Per chi è</h2>
+    <ul class="mt-6 space-y-3 text-slate-700">
+      <li class="flex gap-3"><span class="text-accent font-bold">·</span> Studenti dai 12 ai 18 anni curiosi di robotica, coding, design o engineering</li>
+      <li class="flex gap-3"><span class="text-accent font-bold">·</span> Genitori che vogliono capire se è il percorso giusto per i propri figli</li>
+      <li class="flex gap-3"><span class="text-accent font-bold">·</span> Docenti interessati a iniziative STEM nella propria scuola</li>
+      <li class="flex gap-3"><span class="text-accent font-bold">·</span> Chiunque voglia vedere come si costruisce un robot da zero</li>
+    </ul>
+    <p class="mt-6 text-slate-600 text-sm italic">L'ingresso è gratuito. Si chiede solo di iscriversi per sapere quanti siamo.</p>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center">
+  <h2 class="text-3xl sm:text-4xl font-bold">Ci vediamo il 28–29 maggio</h2>
+  <p class="mt-3 text-slate-600">Iscriviti per ricevere il programma dettagliato e la posizione.</p>
+  <a href="join.html" class="inline-block mt-8 px-8 py-4 rounded-lg bg-accent hover:bg-accent2 text-white font-bold text-lg">Iscriviti ora</a>
+</section>
+
+<footer class="bg-ink text-slate-400 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row justify-between gap-4">
+    <div><p class="text-white font-semibold">FTC Hack Day Milano</p><p class="mt-1">Programma FIRST Tech Challenge · 2026</p></div>
+    <div class="flex gap-5">
+      <a href="ftc.html" class="hover:text-white">FTC</a><a href="hackday.html" class="hover:text-white">Evento</a>
+      <a href="parents.html" class="hover:text-white">Genitori</a><a href="join.html" class="hover:text-white">Iscriviti</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/nav.js"></script>
+</body>
+</html>

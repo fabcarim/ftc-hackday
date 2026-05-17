@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Per i genitori — FTC Hack Day Milano</title>
+<meta name="description" content="Cosa imparano davvero i ragazzi in un team FTC. Sicurezza, mentorship, valore formativo." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{ink:'#0b1220',accent:'#f97316',accent2:'#fb923c'}}}}</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-slate-50 text-ink font-sans antialiased">
+
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+      <span class="inline-block w-7 h-7 rounded-lg bg-ink text-accent grid place-items-center text-sm">⚙</span>
+      <span>FTC Hack Day</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="ml-2 px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent2" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+  <div id="navMobile" class="hidden md:hidden border-t border-slate-200 bg-white">
+    <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="mt-1 px-3 py-2 rounded-lg bg-accent text-white text-center" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+</header>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+  <p class="text-accent font-semibold text-sm uppercase tracking-wide">Per i genitori</p>
+  <h1 class="mt-2 text-4xl sm:text-5xl font-extrabold">Cosa imparano davvero</h1>
+  <p class="mt-6 text-lg text-slate-700">
+    FTC non è "fare giocare i ragazzi con i robot". È un percorso di un anno in cui si lavora in squadra, si progetta, si costruisce, si scrive codice, si presenta. Imparano cose che la scuola raramente insegna così.
+  </p>
+</section>
+
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold">Il valore formativo</h2>
+    <div class="mt-8 grid sm:grid-cols-2 gap-5">
+      <div class="p-5 rounded-xl border border-slate-200">
+        <h3 class="font-bold">Pensiero progettuale</h3>
+        <p class="mt-1 text-sm text-slate-600">Dal problema all'idea, dall'idea al prototipo, dal prototipo che non funziona alla versione che funziona.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <h3 class="font-bold">Lavoro di squadra reale</h3>
+        <p class="mt-1 text-sm text-slate-600">Ruoli, scadenze, decisioni condivise. Si impara a discutere e a fidarsi degli altri.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <h3 class="font-bold">Competenze STEM concrete</h3>
+        <p class="mt-1 text-sm text-slate-600">Programmazione, meccanica, elettronica, CAD. Non slide: cose che si toccano.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <h3 class="font-bold">Public speaking</h3>
+        <p class="mt-1 text-sm text-slate-600">Si presenta il progetto a giudici e adulti. Per molti ragazzi è la prima palestra vera.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <h3 class="font-bold">Gestione del fallimento</h3>
+        <p class="mt-1 text-sm text-slate-600">Il robot non sempre funziona la prima volta. Si impara a non mollare.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <h3 class="font-bold">Comunità internazionale</h3>
+        <p class="mt-1 text-sm text-slate-600">FTC è in oltre 35 paesi. Si incontrano team da tutta Europa e oltre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+  <div class="p-8 rounded-2xl bg-blue-50 border border-blue-100">
+    <h2 class="text-2xl font-bold">Mentorship e supervisione</h2>
+    <p class="mt-3 text-slate-700">
+      Le attività sono seguite da mentor adulti e docenti referenti. L'ambiente è pratico ma protetto: si usano attrezzi e materiali reali con le giuste precauzioni, come in qualunque laboratorio scolastico ben condotto.
+    </p>
+    <p class="mt-3 text-slate-700">
+      I ragazzi sono protagonisti, ma non da soli. Gli adulti guidano, suggeriscono, intervengono quando serve.
+    </p>
+  </div>
+</section>
+
+<section class="bg-white border-t border-slate-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold">Domande frequenti</h2>
+    <div class="mt-6 space-y-5">
+      <div>
+        <h3 class="font-semibold">Quanto tempo richiede?</h3>
+        <p class="mt-1 text-slate-600 text-sm">Dipende dalla fase della stagione. Per ora parliamo solo di un evento di due giorni — l'Hack Day. Senza impegno ulteriore.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Serve esperienza?</h3>
+        <p class="mt-1 text-slate-600 text-sm">No. È fatto apposta per chi parte da zero.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Ha un costo?</h3>
+        <p class="mt-1 text-slate-600 text-sm">L'Hack Day è gratuito. Se più avanti nasce una squadra stabile, parleremo di costi in modo trasparente.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Posso dare una mano anch'io come genitore?</h3>
+        <p class="mt-1 text-slate-600 text-sm">Sì, e fa la differenza. Nel modulo di iscrizione c'è una sezione per indicare in quali aree ti senti più a tuo agio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center">
+  <h2 class="text-3xl sm:text-4xl font-bold">Vieni a vedere di persona</h2>
+  <p class="mt-3 text-slate-600">Il modo migliore per capire è venire all'Hack Day con tuo figlio o tua figlia.</p>
+  <a href="join.html" class="inline-block mt-8 px-8 py-4 rounded-lg bg-accent hover:bg-accent2 text-white font-bold text-lg">Iscriviti</a>
+</section>
+
+<footer class="bg-ink text-slate-400 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row justify-between gap-4">
+    <div><p class="text-white font-semibold">FTC Hack Day Milano</p><p class="mt-1">Programma FIRST Tech Challenge · 2026</p></div>
+    <div class="flex gap-5">
+      <a href="ftc.html" class="hover:text-white">FTC</a><a href="hackday.html" class="hover:text-white">Evento</a>
+      <a href="parents.html" class="hover:text-white">Genitori</a><a href="join.html" class="hover:text-white">Iscriviti</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/nav.js"></script>
+</body>
+</html>

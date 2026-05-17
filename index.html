@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FTC Hack Day — Robotica a Milano</title>
+<meta name="description" content="Hack Day FTC il 28-29 maggio: robotica, coding, CAD, stampa 3D. Aperto a studenti e famiglie, nessuna esperienza richiesta." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        colors: {
+          ink: '#0b1220',
+          accent: '#f97316',
+          accent2: '#fb923c',
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-slate-50 text-ink font-sans antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+      <span class="inline-block w-7 h-7 rounded-lg bg-ink text-accent grid place-items-center text-sm">⚙</span>
+      <span>FTC Hack Day</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex items-center gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="ml-2 px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent2" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+  <div id="navMobile" class="hidden md:hidden border-t border-slate-200 bg-white">
+    <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="mt-1 px-3 py-2 rounded-lg bg-accent text-white text-center" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-ink via-slate-900 to-slate-800"></div>
+  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 30%, #f97316 0%, transparent 40%), radial-gradient(circle at 80% 70%, #3b82f6 0%, transparent 40%);"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-white">
+    <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold tracking-wide uppercase">
+      <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+      28–29 maggio · Milano
+    </p>
+    <h1 class="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
+      Costruisci. Programma.<br/>
+      <span class="text-accent">Sfida te stesso.</span>
+    </h1>
+    <p class="mt-5 max-w-2xl text-lg text-slate-300">
+      Due giorni per scoprire la robotica FTC: robot, codice, CAD, stampa 3D, lavoro di squadra. Nessuna esperienza richiesta. Solo curiosità.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+      <a href="join.html" class="px-6 py-3 rounded-lg bg-accent hover:bg-accent2 font-semibold text-center">Partecipa all'Hack Day</a>
+      <a href="ftc.html" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 font-semibold text-center">Cos'è FTC?</a>
+    </div>
+  </div>
+</section>
+
+<!-- COSA -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="p-6 rounded-2xl bg-white border border-slate-200">
+      <div class="w-10 h-10 rounded-lg bg-orange-100 text-accent grid place-items-center text-xl">🤖</div>
+      <h3 class="mt-4 font-bold text-lg">Robotica vera</h3>
+      <p class="mt-2 text-slate-600 text-sm">Costruisci robot funzionanti con motori, sensori e codice. Dal pezzo al movimento.</p>
+    </div>
+    <div class="p-6 rounded-2xl bg-white border border-slate-200">
+      <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 grid place-items-center text-xl">💻</div>
+      <h3 class="mt-4 font-bold text-lg">Coding & CAD</h3>
+      <p class="mt-2 text-slate-600 text-sm">Java, Python, progettazione 3D, stampa 3D. Strumenti reali, non giocattoli.</p>
+    </div>
+    <div class="p-6 rounded-2xl bg-white border border-slate-200">
+      <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 grid place-items-center text-xl">🤝</div>
+      <h3 class="mt-4 font-bold text-lg">Squadra</h3>
+      <p class="mt-2 text-slate-600 text-sm">Si vince insieme. Ognuno trova il suo ruolo: design, costruzione, codice, comunicazione.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTO -->
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="text-accent font-semibold text-sm uppercase tracking-wide">L'evento</p>
+      <h2 class="mt-2 text-3xl sm:text-4xl font-bold">Due giorni per provare tutto</h2>
+      <p class="mt-4 text-slate-600">
+        L'Hack Day è un evento aperto: vieni, guarda, prova. Demo di robot, mini-sfide a squadre, attività con LEGO, stampa 3D dal vivo, esperimenti di engineering.
+      </p>
+      <p class="mt-3 text-slate-600">
+        Non è una selezione. È un'occasione per capire se la robotica fa per te — o per i tuoi figli.
+      </p>
+      <a href="hackday.html" class="inline-block mt-6 px-5 py-2.5 rounded-lg bg-ink text-white hover:bg-slate-800 text-sm font-semibold">Programma dell'evento →</a>
+    </div>
+    <div class="aspect-video rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-sm border border-slate-200">
+      [foto dell'evento — placeholder]
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-20 text-center">
+  <h2 class="text-3xl sm:text-4xl font-bold">Pronto a iniziare?</h2>
+  <p class="mt-3 text-slate-600 max-w-xl mx-auto">Lascia i tuoi contatti. Ti scriviamo con tutte le informazioni sull'Hack Day e sulle prossime attività FTC.</p>
+  <a href="join.html" class="inline-block mt-8 px-8 py-4 rounded-lg bg-accent hover:bg-accent2 text-white font-bold text-lg">Iscriviti all'Hack Day</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-slate-400 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row justify-between gap-4">
+    <div>
+      <p class="text-white font-semibold">FTC Hack Day Milano</p>
+      <p class="mt-1">Programma FIRST Tech Challenge · 2026</p>
+    </div>
+    <div class="flex gap-5">
+      <a href="ftc.html" class="hover:text-white">FTC</a>
+      <a href="hackday.html" class="hover:text-white">Evento</a>
+      <a href="parents.html" class="hover:text-white">Genitori</a>
+      <a href="join.html" class="hover:text-white">Iscriviti</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/nav.js"></script>
+</body>
+</html>

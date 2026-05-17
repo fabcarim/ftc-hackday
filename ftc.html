@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cos'è FTC — FTC Hack Day Milano</title>
+<meta name="description" content="FIRST Tech Challenge: robotica, coding, CAD, teamwork. Spiegato in modo semplice." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','system-ui','sans-serif'] }, colors: { ink:'#0b1220', accent:'#f97316', accent2:'#fb923c' } } } }
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-slate-50 text-ink font-sans antialiased">
+
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+      <span class="inline-block w-7 h-7 rounded-lg bg-ink text-accent grid place-items-center text-sm">⚙</span>
+      <span>FTC Hack Day</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="ml-2 px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent2" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+  <div id="navMobile" class="hidden md:hidden border-t border-slate-200 bg-white">
+    <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Hack Day</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="mt-1 px-3 py-2 rounded-lg bg-accent text-white text-center" href="join.html">Iscriviti</a>
+    </nav>
+  </div>
+</header>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+  <p class="text-accent font-semibold text-sm uppercase tracking-wide">FIRST Tech Challenge</p>
+  <h1 class="mt-2 text-4xl sm:text-5xl font-extrabold">Cos'è FTC, in due righe</h1>
+  <p class="mt-6 text-lg text-slate-700">
+    FTC è una sfida internazionale di robotica per ragazzi tra i 12 e i 18 anni. Ogni squadra costruisce un robot da zero, lo programma, lo presenta — e lo mette in gioco contro altri team in una stagione che dura un anno.
+  </p>
+  <p class="mt-4 text-lg text-slate-700">
+    Ma è solo metà della storia. L'altra metà è quello che impari mentre lo costruisci.
+  </p>
+</section>
+
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold">Cosa si fa davvero in un team FTC</h2>
+    <div class="mt-8 grid sm:grid-cols-2 gap-5">
+      <div class="p-5 rounded-xl border border-slate-200">
+        <div class="text-2xl">🔧</div>
+        <h3 class="mt-2 font-bold">Costruzione</h3>
+        <p class="mt-1 text-sm text-slate-600">Telai in metallo, motori, ingranaggi, cinghie. Si lavora con strumenti veri.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <div class="text-2xl">💻</div>
+        <h3 class="mt-2 font-bold">Programmazione</h3>
+        <p class="mt-1 text-sm text-slate-600">Java, Blocks, o Python (OnBot Java / Android Studio). Codice che muove cose reali.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <div class="text-2xl">📐</div>
+        <h3 class="mt-2 font-bold">CAD e stampa 3D</h3>
+        <p class="mt-1 text-sm text-slate-600">Onshape, Fusion 360. Progetti pezzi, li stampi, li monti.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <div class="text-2xl">🎤</div>
+        <h3 class="mt-2 font-bold">Comunicazione</h3>
+        <p class="mt-1 text-sm text-slate-600">Si presenta il progetto a giudici, sponsor, scuole. Public speaking vero.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <div class="text-2xl">🎯</div>
+        <h3 class="mt-2 font-bold">Strategia e game design</h3>
+        <p class="mt-1 text-sm text-slate-600">Ogni stagione cambia gioco. Si analizza, si decide come vincere.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-slate-200">
+        <div class="text-2xl">🎨</div>
+        <h3 class="mt-2 font-bold">Media e grafica</h3>
+        <p class="mt-1 text-sm text-slate-600">Video, social, sito, branding del team. Chi disegna o filma trova posto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+  <div class="p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-100">
+    <h2 class="text-2xl font-bold">Non serve essere già esperti</h2>
+    <p class="mt-3 text-slate-700">
+      Davvero. La maggior parte dei team parte da zero. Quello che conta è la voglia di provare, sbagliare, riprovare. Le competenze vengono insieme.
+    </p>
+    <p class="mt-3 text-slate-700">
+      E c'è un ruolo per ciascuno: chi ama costruire, chi vuole programmare, chi disegna, chi organizza, chi parla in pubblico.
+    </p>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 pb-20 text-center">
+  <a href="join.html" class="inline-block px-8 py-4 rounded-lg bg-accent hover:bg-accent2 text-white font-bold text-lg">Voglio provare all'Hack Day</a>
+</section>
+
+<footer class="bg-ink text-slate-400 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row justify-between gap-4">
+    <div>
+      <p class="text-white font-semibold">FTC Hack Day Milano</p>
+      <p class="mt-1">Programma FIRST Tech Challenge · 2026</p>
+    </div>
+    <div class="flex gap-5">
+      <a href="ftc.html" class="hover:text-white">FTC</a>
+      <a href="hackday.html" class="hover:text-white">Evento</a>
+      <a href="parents.html" class="hover:text-white">Genitori</a>
+      <a href="join.html" class="hover:text-white">Iscriviti</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/nav.js"></script>
+</body>
+</html>
