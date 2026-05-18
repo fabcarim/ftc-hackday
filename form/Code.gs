@@ -15,11 +15,12 @@
  */
 
 function createForm() {
-  var form = FormApp.create('FTC Robotics Milano — Contatti per il team')
+  var form = FormApp.create('FTC @ Kandinsky — Contatti per i team')
     .setDescription(
-      "Ciao! Lascia i tuoi contatti per restare aggiornato sulle attività del team FTC " +
-      "o per valutare di unirti. Nessun impegno: ti scriviamo solo per invitarti " +
-      "alle prossime occasioni. Richiede meno di 2 minuti."
+      "Ciao! Al Liceo Kandinsky è ospitato il programma FIRST Tech Challenge con due team: " +
+      "i Carcadonti (già attivo) e un nuovo team in formazione. Lascia i tuoi contatti per " +
+      "valutare di unirti a uno dei due — o solo per restare aggiornato. Nessun impegno. " +
+      "Richiede meno di 2 minuti."
     )
     .setCollectEmail(false)
     .setLimitOneResponsePerUser(false)
@@ -131,7 +132,22 @@ function createForm() {
     ])
     .setRequired(false);
 
-  // ---- SEZIONE 7 — Come ci hai conosciuti ----
+  // ---- SEZIONE 7 — Preferenza team ----
+  form.addPageBreakItem()
+    .setTitle('Preferenza team')
+    .setHelpText('Al Kandinsky ci sono due team FTC: Carcadonti (già attivo) e un nuovo team in formazione. Hai una preferenza?');
+
+  form.addMultipleChoiceItem()
+    .setTitle('A quale team vorresti unirti?')
+    .setChoiceValues([
+      'Carcadonti (team già attivo)',
+      'Nuovo team in formazione',
+      'Indifferente, vedete voi',
+      'Non so ancora, voglio solo informarmi'
+    ])
+    .setRequired(false);
+
+  // ---- SEZIONE 8 — Come ci hai conosciuti ----
   form.addPageBreakItem().setTitle('Come ci hai conosciuti');
 
   form.addMultipleChoiceItem()
@@ -145,7 +161,7 @@ function createForm() {
     ])
     .setRequired(false);
 
-  // ---- SEZIONE 8 — Una domanda libera ----
+  // ---- SEZIONE 9 — Una domanda libera ----
   form.addPageBreakItem().setTitle('Una domanda libera');
 
   form.addParagraphTextItem()
@@ -153,7 +169,7 @@ function createForm() {
     .setRequired(false);
 
   // ---- Crea anche il foglio risposte collegato ----
-  var ss = SpreadsheetApp.create('FTC Robotics Milano — Contatti');
+  var ss = SpreadsheetApp.create('FTC @ Kandinsky — Contatti');
   form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
 
   // ---- Output ----
