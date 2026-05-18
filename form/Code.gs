@@ -132,22 +132,7 @@ function createForm() {
     ])
     .setRequired(false);
 
-  // ---- SEZIONE 7 — Preferenza team ----
-  form.addPageBreakItem()
-    .setTitle('Preferenza team')
-    .setHelpText('Al Kandinsky ci sono due team FTC: Carcadonti (già attivo) e un nuovo team in formazione. Hai una preferenza?');
-
-  form.addMultipleChoiceItem()
-    .setTitle('A quale team vorresti unirti?')
-    .setChoiceValues([
-      'Carcadonti (team già attivo)',
-      'Nuovo team in formazione',
-      'Indifferente, vedete voi',
-      'Non so ancora, voglio solo informarmi'
-    ])
-    .setRequired(false);
-
-  // ---- SEZIONE 8 — Come ci hai conosciuti ----
+  // ---- SEZIONE 7 — Come ci hai conosciuti ----
   form.addPageBreakItem().setTitle('Come ci hai conosciuti');
 
   form.addMultipleChoiceItem()
@@ -161,7 +146,7 @@ function createForm() {
     ])
     .setRequired(false);
 
-  // ---- SEZIONE 9 — Una domanda libera ----
+  // ---- SEZIONE 8 — Una domanda libera ----
   form.addPageBreakItem().setTitle('Una domanda libera');
 
   form.addParagraphTextItem()
