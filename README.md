@@ -1,8 +1,19 @@
-# FTC Hack Day Milano — Sito
+# Carcadonti — Sito team FTC
 
-Sito statico per il programma FTC e l'Hack Day del 28-29 maggio.
+Sito statico del team Carcadonti (FTC Robotics) del Liceo Kandinsky.
+Evento di Robotica: 29 maggio 2026, Aula Magna, 8:40-14:00.
 
 Pubblicato su GitHub Pages: https://fabcarim.github.io/ftc-hackday/
+
+## Immagini da salvare in `assets/`
+
+Per far comparire le locandine e il logo, salva nella cartella `assets/` questi 3 file (i nomi devono essere esatti):
+
+- `logo-carcadonti.png` — il logo del team (squalo robotico in cerchio rosso/oro)
+- `locandina-evento.jpg` — la locandina principale "Evento di Robotica" (verticale)
+- `locandina-hackathon.jpg` — la locandina "Competizione di Innovazione - Edizione Speciale Classe 2S" (verticale)
+
+Finché non li carichi, al loro posto compaiono dei placeholder grigi.
 
 ## Aggiornare i testi
 

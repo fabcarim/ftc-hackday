@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FTC e la scuola — Carcadonti</title>
+<meta name="description" content="Come il programma FTC del team Carcadonti si integra con gli indirizzi del Liceo Kandinsky. Pitch per la scuola, mapping ruoli FTC e indirizzi formativi." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{ink:'#0b1220',accent:'#f97316',accent2:'#fb923c',tech:'#22d3ee',creative:'#fb923c'}}}}</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-slate-50 text-ink font-sans antialiased">
+
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+      <span class="inline-block w-7 h-7 rounded-lg bg-ink text-accent grid place-items-center text-sm">⚙</span>
+      <span>Carcadonti</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Evento 29 maggio</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="school.html">Scuola</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="ml-2 px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent2" href="join.html">Unisciti</a>
+    </nav>
+  </div>
+  <div id="navMobile" class="hidden md:hidden border-t border-slate-200 bg-white">
+    <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="hackday.html">Evento 29 maggio</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="school.html">Scuola</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Genitori</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
+      <a class="mt-1 px-3 py-2 rounded-lg bg-accent text-white text-center" href="join.html">Unisciti</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="bg-gradient-to-br from-ink to-slate-800 text-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold tracking-wide uppercase">
+      <span class="w-2 h-2 rounded-full bg-accent"></span> Per la scuola
+    </p>
+    <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold">FTC dentro il Liceo Kandinsky</h1>
+    <p class="mt-5 text-lg text-slate-300 max-w-2xl">
+      Il programma FIRST Tech Challenge non è un'attività extra che vive a parte: si aggancia in modo naturale a quasi tutti gli indirizzi della scuola, dal tecnico-scientifico all'artistico, dalla moda alla comunicazione.
+    </p>
+  </div>
+</section>
+
+<!-- PERCHÉ FTC PER LA SCUOLA -->
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="text-2xl sm:text-3xl font-bold">Perché FTC è un valore per la scuola</h2>
+  <p class="mt-2 text-slate-600 max-w-3xl">In una sola squadra convivono progettazione meccanica, programmazione, design, comunicazione, moda, video, sponsorship. Ogni indirizzo del Kandinsky trova un ruolo concreto.</p>
+
+  <div class="mt-8 grid md:grid-cols-3 gap-5">
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <h3 class="font-bold">📚 Curriculum reale</h3>
+      <p class="mt-2 text-sm text-slate-600">Gli studenti applicano in un progetto vero le competenze che studiano a scuola: matematica, fisica, informatica, disegno, lingue, comunicazione.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <h3 class="font-bold">🌍 Visibilità internazionale</h3>
+      <p class="mt-2 text-sm text-slate-600">FTC è in oltre 70 paesi. La scuola entra in una rete internazionale di istituti, sponsor, università.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <h3 class="font-bold">🤝 Trasversalità</h3>
+      <p class="mt-2 text-sm text-slate-600">Un solo progetto coinvolge studenti di indirizzi diversi che lavorano insieme — quello che la scuola cerca di promuovere per definizione.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAPPING RUOLI ↔ INDIRIZZI -->
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <p class="text-accent font-semibold text-sm uppercase tracking-wide">Mapping</p>
+    <h2 class="mt-2 text-2xl sm:text-3xl font-bold">Un posto per ogni talento</h2>
+    <p class="mt-2 text-slate-600 max-w-3xl">
+      I sei ruoli ufficiali FTC (definiti da FIRST, non modificabili) si distribuiscono naturalmente su due grandi aree del Kandinsky: <span class="font-semibold text-cyan-700">Sviluppo Tecnico</span> e <span class="font-semibold text-orange-600">Studio Creativo</span>. Ecco come.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-8">
+
+      <!-- SVILUPPO TECNICO -->
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="w-3 h-3 rounded-full bg-cyan-400"></span>
+          <h3 class="text-xl font-bold text-cyan-700">Sviluppo Tecnico</h3>
+        </div>
+        <p class="mt-2 text-sm text-slate-600">Indirizzi tecnico-scientifici e informatici.</p>
+
+        <div class="mt-5 space-y-4">
+          <div class="p-5 rounded-xl border-2 border-cyan-100 bg-cyan-50/50">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">🔧</div>
+              <div>
+                <p class="font-bold">Meccanica & CAD</p>
+                <p class="mt-1 text-xs text-cyan-700 font-semibold uppercase tracking-wide">Ruoli FTC: Builder · CAD designer</p>
+                <p class="mt-2 text-sm text-slate-700">Progettazione 3D del robot, montaggio, assemblaggio, stampa 3D, taglio metallo. Strumenti: Onshape, Fusion 360, stampanti FDM.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl border-2 border-cyan-100 bg-cyan-50/50">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">💻</div>
+              <div>
+                <p class="font-bold">Software & Coding</p>
+                <p class="mt-1 text-xs text-cyan-700 font-semibold uppercase tracking-wide">Ruolo FTC: Programmer</p>
+                <p class="mt-2 text-sm text-slate-700">Programmazione in Java/Blocks, gestione sensori, logica autonoma, computer vision. Strumenti: Android Studio, OnBot Java, librerie open source.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl border-2 border-cyan-100 bg-cyan-50/50">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">🎮</div>
+              <div>
+                <p class="font-bold">Drive Team</p>
+                <p class="mt-1 text-xs text-cyan-700 font-semibold uppercase tracking-wide">Ruolo FTC: Strategist</p>
+                <p class="mt-2 text-sm text-slate-700">Strategia di gara, pilotaggio del robot sul campo, scelta delle alleanze. Tattica, riflessi, comunicazione sotto pressione.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDIO CREATIVO -->
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="w-3 h-3 rounded-full bg-orange-400"></span>
+          <h3 class="text-xl font-bold text-orange-600">Studio Creativo</h3>
+        </div>
+        <p class="mt-2 text-sm text-slate-600">Indirizzi artistici, moda, comunicazione, media.</p>
+
+        <div class="mt-5 space-y-4">
+          <div class="p-5 rounded-xl border-2 border-orange-100 bg-orange-50/50">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">🎨</div>
+              <div>
+                <p class="font-bold">Grafica & Design</p>
+                <p class="mt-1 text-xs text-orange-700 font-semibold uppercase tracking-wide">Ruolo FTC: Communicator</p>
+                <p class="mt-2 text-sm text-slate-700">Identità visiva del team, loghi, palette, materiali di comunicazione. L'Engineering Notebook ufficiale FTC ha una valutazione di design che vale awards.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl border-2 border-orange-100 bg-orange-50/50">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">👕</div>
+              <div>
+                <p class="font-bold">Moda & Abbigliamento</p>
+                <p class="mt-1 text-xs text-orange-700 font-semibold uppercase tracking-wide">Ruolo FTC: Communicator (estensione)</p>
+                <p class="mt-2 text-sm text-slate-700">Progettazione delle divise di gara, scelta dei materiali, stile e identità del team in pista. Un asset distintivo nei tornei internazionali.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl border-2 border-orange-100 bg-orange-50/50">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">📱</div>
+              <div>
+                <p class="font-bold">Media & Social</p>
+                <p class="mt-1 text-xs text-orange-700 font-semibold uppercase tracking-wide">Ruolo FTC: Communicator (estensione)</p>
+                <p class="mt-2 text-sm text-slate-700">Foto, video, gestione della presenza digitale del team. Documentazione del percorso, contenuti per sponsor, narrazione del team.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl border-2 border-orange-100 bg-orange-50/50">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">🤝</div>
+              <div>
+                <p class="font-bold">Outreach & Sponsor</p>
+                <p class="mt-1 text-xs text-orange-700 font-semibold uppercase tracking-wide">Ruolo FTC: Organizer / Captain</p>
+                <p class="mt-2 text-sm text-slate-700">Creazione dello Sponsor Deck, relazioni con aziende, comunità STEM, altre scuole. Public speaking. Conta direttamente per il Connect Award e l'Inspire Award.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="mt-10 text-sm text-slate-500 italic">I sei ruoli ufficiali FTC (Builder, Programmer, CAD designer, Communicator, Strategist, Organizer) sono definiti da FIRST e non modificabili. La mappatura sopra mostra come ciascun ruolo si traduca nelle competenze formative offerte dal Liceo Kandinsky.</p>
+  </div>
+</section>
+
+<!-- VALORE PER GLI INDIRIZZI -->
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="text-2xl sm:text-3xl font-bold">Cosa offre concretamente a ciascun indirizzo</h2>
+
+  <div class="mt-8 space-y-4">
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">Indirizzi tecnico-scientifici</p>
+      <p class="mt-2 text-sm text-slate-700">Un progetto annuale dove applicare matematica, fisica, informatica su un sistema fisico reale che vince o perde in base alle scelte fatte. Le competenze sono direttamente trasferibili in università STEM o ITS.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">Indirizzi artistici e grafici</p>
+      <p class="mt-2 text-sm text-slate-700">Identità visiva del team, contenuti per gli sponsor, design dell'Engineering Notebook (premio Think). Portfolio reale per maturità e ammissioni a istituti d'arte e design.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">Indirizzo moda</p>
+      <p class="mt-2 text-sm text-slate-700">Progettazione delle divise di gara: ricerca tessuti, prototipazione, produzione di un'uniforme che il team indossa nei tornei internazionali. Un capo finito che esce dalla scuola.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">Indirizzo audiovisivo e multimediale</p>
+      <p class="mt-2 text-sm text-slate-700">Documentazione video della stagione, contenuti social, pitch video per sponsor. Lavoro che entra direttamente nel reel professionale degli studenti.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">Indirizzo linguistico e comunicazione</p>
+      <p class="mt-2 text-sm text-slate-700">Sponsor deck, relazioni con team esteri, presentazioni ai giudici (spesso in inglese), narrazione del progetto. Public speaking applicato.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COME PARTECIPA LA SCUOLA -->
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold">Cosa serve dalla scuola</h2>
+    <p class="mt-2 text-slate-600">Concretamente, per far funzionare il programma.</p>
+
+    <div class="mt-8 space-y-5">
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-full bg-accent text-white grid place-items-center font-bold text-sm">1</div>
+        <div>
+          <p class="font-semibold">Riconoscimento del programma</p>
+          <p class="mt-1 text-sm text-slate-600">FTC viene inserito tra le attività ufficiali della scuola, valido per PCTO e crediti formativi.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-full bg-accent text-white grid place-items-center font-bold text-sm">2</div>
+        <div>
+          <p class="font-semibold">Spazio di lavoro</p>
+          <p class="mt-1 text-sm text-slate-600">Un'aula o un laboratorio dedicato per le sessioni settimanali del team (riunioni, costruzione, test).</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-full bg-accent text-white grid place-items-center font-bold text-sm">3</div>
+        <div>
+          <p class="font-semibold">Docente referente</p>
+          <p class="mt-1 text-sm text-slate-600">Un punto di contatto interno per coordinare con i mentor esterni e i ragazzi.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-full bg-accent text-white grid place-items-center font-bold text-sm">4</div>
+        <div>
+          <p class="font-semibold">Comunicazione interna</p>
+          <p class="mt-1 text-sm text-slate-600">Possibilità di presentare il programma agli studenti dei vari indirizzi per il recruitment trasversale del team.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-8 text-sm text-slate-600">Il finanziamento del materiale viene gestito dal team tramite sponsorship e contributi famiglie — non grava sul bilancio scolastico.</p>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="text-2xl sm:text-3xl font-bold">Partner del progetto</h2>
+  <div class="mt-6 grid sm:grid-cols-3 gap-5">
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">🦈 Team Carcadonti</p>
+      <p class="mt-2 text-sm text-slate-600">Team FTC nato all'interno del Liceo Kandinsky.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">🏫 Liceo Kandinsky</p>
+      <p class="mt-2 text-sm text-slate-600">Istituto ospitante, con indirizzi tecnico-scientifici e artistici.</p>
+    </div>
+    <div class="p-5 rounded-xl bg-white border border-slate-200">
+      <p class="font-bold">🤝 Artù Onlus</p>
+      <p class="mt-2 text-sm text-slate-600">Associazione partner per lo sviluppo del progetto educativo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-ink text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold">Vuoi approfondire con il team?</h2>
+    <p class="mt-3 text-slate-300">Per docenti e dirigenza scolastica: organizziamo volentieri un incontro dedicato per illustrare il programma nel dettaglio.</p>
+    <a href="join.html" class="inline-block mt-8 px-8 py-4 rounded-lg bg-accent hover:bg-accent2 text-white font-bold text-lg">Mettiti in contatto</a>
+  </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-400 text-sm border-t border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row justify-between gap-4">
+    <div><p class="text-white font-semibold">Carcadonti · FTC Robotics</p><p class="mt-1">Liceo Kandinsky · in collaborazione con Artù Onlus</p></div>
+    <div class="flex gap-5 flex-wrap">
+      <a href="ftc.html" class="hover:text-white">FTC</a><a href="hackday.html" class="hover:text-white">29 maggio</a>
+      <a href="school.html" class="hover:text-white">Scuola</a><a href="parents.html" class="hover:text-white">Genitori</a>
+      <a href="resources.html" class="hover:text-white">Risorse</a><a href="join.html" class="hover:text-white">Unisciti</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/nav.js"></script>
+</body>
+</html>

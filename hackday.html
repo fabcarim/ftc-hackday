@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hack Day 29 maggio — FTC Milano</title>
-<meta name="description" content="L'Hack Day FTC del 29 maggio: cosa abbiamo mostrato, foto, e come restare in contatto col team." />
+<title>Evento di Robotica 29 maggio — Carcadonti</title>
+<meta name="description" content="Evento di Robotica del team Carcadonti: 29 maggio 2026, Aula Magna, 8:40-14:00. Aperto a tutti." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
-      <span class="inline-block w-7 h-7 rounded-lg bg-ink text-accent grid place-items-center text-sm">⚙</span>
-      <span>FTC Milano</span>
+      <span class="inline-block w-7 h-7 rounded-lg bg-ink text-accent grid place-items-center text-sm">🦈</span>
+      <span>Carcadonti</span>
     </a>
     <button id="navToggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -26,8 +26,9 @@
     <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
       <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
       <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
-      <a class="px-3 py-2 rounded-lg bg-slate-100" href="hackday.html">Hack Day</a>
-      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="hackday.html">Evento 29 maggio</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="school.html">Scuola</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Genitori</a>
       <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
       <a class="ml-2 px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent2" href="join.html">Unisciti</a>
     </nav>
@@ -36,97 +37,188 @@
     <nav class="px-4 py-3 flex flex-col gap-1 text-sm font-medium">
       <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="index.html">Home</a>
       <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="ftc.html">Cos'è FTC</a>
-      <a class="px-3 py-2 rounded-lg bg-slate-100" href="hackday.html">Hack Day</a>
-      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Per i genitori</a>
+      <a class="px-3 py-2 rounded-lg bg-slate-100" href="hackday.html">Evento 29 maggio</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="school.html">Scuola</a>
+      <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="parents.html">Genitori</a>
       <a class="px-3 py-2 rounded-lg hover:bg-slate-100" href="resources.html">Risorse</a>
       <a class="mt-1 px-3 py-2 rounded-lg bg-accent text-white text-center" href="join.html">Unisciti</a>
     </nav>
   </div>
 </header>
 
+<!-- HERO EVENTO -->
 <section class="bg-gradient-to-br from-ink to-slate-800 text-white">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-    <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold tracking-wide uppercase">
-      <span class="w-2 h-2 rounded-full bg-accent"></span> 29 maggio · Milano
-    </p>
-    <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold">Hack Day FTC</h1>
-    <p class="mt-5 text-lg text-slate-300 max-w-2xl">
-      Una giornata aperta a scuola: il nostro team ha mostrato cosa fa, come lo fa, e perché. Robot, codice, CAD, LEGO, stampa 3D — e tante domande.
-    </p>
-    <div class="mt-7">
-      <a href="join.html" class="inline-block px-6 py-3 rounded-lg bg-accent hover:bg-accent2 font-semibold">Eri qui? Resta in contatto</a>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-[1.3fr_1fr] gap-10 items-center">
+    <div>
+      <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-semibold tracking-wide uppercase">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> In arrivo · 29 maggio 2026
+      </p>
+      <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold">Evento di Robotica<br/>edizione speciale classe 2S</h1>
+      <p class="mt-5 text-lg text-slate-300 max-w-2xl">
+        Una mattinata aperta in Aula Magna: il team <strong class="text-white">Carcadonti</strong> presenta cosa fa, come lo fa, e perché. Robot in azione, demo, e una <strong class="text-white">Competizione di Innovazione</strong> dedicata alla classe 2S.
+      </p>
+
+      <!-- Info pratiche -->
+      <div class="mt-8 grid sm:grid-cols-2 gap-4 max-w-xl">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs text-slate-400 uppercase tracking-wide font-semibold">Data</p>
+          <p class="mt-1 font-bold text-lg">29 maggio 2026</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs text-slate-400 uppercase tracking-wide font-semibold">Orario</p>
+          <p class="mt-1 font-bold text-lg">8:40 — 14:00</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs text-slate-400 uppercase tracking-wide font-semibold">Dove</p>
+          <p class="mt-1 font-bold text-lg">Aula Magna</p>
+          <p class="text-sm text-slate-400">Liceo Kandinsky</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+          <p class="text-xs text-slate-400 uppercase tracking-wide font-semibold">Ingresso</p>
+          <p class="mt-1 font-bold text-lg">Libero</p>
+          <p class="text-sm text-slate-400">Aperto a tutti</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- Locandina principale (verticale): assets/locandina-evento.jpg -->
+      <img src="assets/locandina-evento.jpg" alt="Locandina Evento di Robotica 29 maggio"
+           class="w-full h-auto rounded-2xl shadow-2xl"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+      <div class="aspect-[3/4] rounded-2xl bg-white/5 border border-white/10 grid place-items-center text-slate-400 text-xs text-center p-6" style="display:none">
+        [locandina verticale<br>"Evento di Robotica"<br>salvare come<br><code>assets/locandina-evento.jpg</code>]
+      </div>
     </div>
   </div>
 </section>
 
-<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-  <h2 class="text-2xl sm:text-3xl font-bold">Cosa abbiamo mostrato</h2>
-  <p class="mt-2 text-slate-600">Sei stazioni, una giornata, zero noia.</p>
-  <div class="mt-8 grid md:grid-cols-2 gap-5">
-    <div class="p-6 rounded-xl bg-white border border-slate-200">
-      <div class="text-2xl">🤖</div>
-      <h3 class="mt-2 font-bold">Demo di robot FTC</h3>
-      <p class="mt-1 text-sm text-slate-600">Robot in azione: come si muovono, come prendono oggetti, com'è fatta la trasmissione.</p>
+<!-- COMPETIZIONE DI INNOVAZIONE -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <div class="grid md:grid-cols-[1fr_1.3fr] gap-10 items-center">
+    <div>
+      <!-- Locandina hackathon: assets/locandina-hackathon.jpg -->
+      <img src="assets/locandina-hackathon.jpg" alt="Locandina Competizione di Innovazione 2S"
+           class="w-full h-auto rounded-2xl shadow-xl border border-slate-200"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+      <div class="aspect-[3/4] rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-xs text-center p-6 border border-slate-200" style="display:none">
+        [locandina hackathon "Competizione di Innovazione - Edizione Speciale Classe 2S"<br>salvare come<br><code>assets/locandina-hackathon.jpg</code>]
+      </div>
     </div>
-    <div class="p-6 rounded-xl bg-white border border-slate-200">
-      <div class="text-2xl">🎯</div>
-      <h3 class="mt-2 font-bold">Mini-challenge a squadre</h3>
-      <p class="mt-1 text-sm text-slate-600">Gruppi al volo, piccole sfide di engineering risolte in 20 minuti.</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white border border-slate-200">
-      <div class="text-2xl">🧱</div>
-      <h3 class="mt-2 font-bold">Stazione LEGO</h3>
-      <p class="mt-1 text-sm text-slate-600">Trasmissioni, ingranaggi, leve. Funziona a tutte le età.</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white border border-slate-200">
-      <div class="text-2xl">🖨️</div>
-      <h3 class="mt-2 font-bold">Stampa 3D dal vivo</h3>
-      <p class="mt-1 text-sm text-slate-600">Un pezzo nasce strato dopo strato. Dal disegno CAD all'oggetto in mano.</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white border border-slate-200">
-      <div class="text-2xl">⚙️</div>
-      <h3 class="mt-2 font-bold">Esperimenti engineering</h3>
-      <p class="mt-1 text-sm text-slate-600">Sensori, motori, piccoli circuiti. La differenza tra teoria e pratica.</p>
-    </div>
-    <div class="p-6 rounded-xl bg-white border border-slate-200">
-      <div class="text-2xl">💬</div>
-      <h3 class="mt-2 font-bold">Q&A con il team</h3>
-      <p class="mt-1 text-sm text-slate-600">Tutte le domande: stagione, tempi, costi, come ci si entra, cosa si impara.</p>
+    <div>
+      <p class="text-accent font-semibold text-sm uppercase tracking-wide">Per la 2S</p>
+      <h2 class="mt-2 text-3xl font-bold">Competizione di Innovazione</h2>
+      <p class="mt-2 text-slate-600 italic">Hai l'entusiasmo per metterti alla prova?</p>
+
+      <p class="mt-5 text-slate-700">
+        Entra a far parte di un'avventura all'avanguardia dove si fondono inventiva, tecnologia e cooperazione. Un hackathon è una sfida collaborativa in cui i team elaborano concetti e soluzioni creative sfruttando robotica, programmazione e capacità di problem solving.
+      </p>
+
+      <p class="mt-5 font-semibold text-slate-800">Durante questa esperienza potrai:</p>
+      <ul class="mt-3 space-y-2 text-slate-700">
+        <li class="flex gap-3"><span class="text-accent font-bold">⚙</span> Cooperare con i tuoi coetanei</li>
+        <li class="flex gap-3"><span class="text-accent font-bold">⚙</span> Progettare idee originali</li>
+        <li class="flex gap-3"><span class="text-accent font-bold">⚙</span> Misurarti con sfide tecnologiche</li>
+        <li class="flex gap-3"><span class="text-accent font-bold">⚙</span> Divertirti imparando</li>
+      </ul>
+
+      <div class="mt-6 p-4 rounded-xl bg-orange-50 border border-orange-100">
+        <p class="text-sm text-slate-700">
+          <span class="font-bold">🔥 Non servono competenze pregresse.</span> Sono sufficienti curiosità, entusiasmo e attitudine al lavoro di gruppo.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- COSA TROVERAI -->
 <section class="bg-white border-y border-slate-200">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-    <h2 class="text-2xl sm:text-3xl font-bold">Galleria foto</h2>
-    <p class="mt-2 text-slate-600 text-sm">Le foto della giornata appariranno qui appena le carichiamo.</p>
-    <div class="mt-6 grid sm:grid-cols-3 gap-4">
-      <div class="aspect-square rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-xs border border-slate-200">[foto 1]</div>
-      <div class="aspect-square rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-xs border border-slate-200">[foto 2]</div>
-      <div class="aspect-square rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-xs border border-slate-200">[foto 3]</div>
-      <div class="aspect-square rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-xs border border-slate-200">[foto 4]</div>
-      <div class="aspect-square rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-xs border border-slate-200">[foto 5]</div>
-      <div class="aspect-square rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 grid place-items-center text-slate-400 text-xs border border-slate-200">[foto 6]</div>
+    <h2 class="text-2xl sm:text-3xl font-bold">Cosa troverai in Aula Magna</h2>
+    <p class="mt-2 text-slate-600">Sei stazioni durante la mattinata.</p>
+    <div class="mt-8 grid md:grid-cols-2 gap-5">
+      <div class="p-6 rounded-xl bg-slate-50 border border-slate-200">
+        <div class="text-2xl">🤖</div>
+        <h3 class="mt-2 font-bold">Demo di robot FTC</h3>
+        <p class="mt-1 text-sm text-slate-600">Robot in azione: come si muovono, come prendono oggetti, com'è fatta la trasmissione.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 border border-slate-200">
+        <div class="text-2xl">🎯</div>
+        <h3 class="mt-2 font-bold">Mini-challenge a squadre</h3>
+        <p class="mt-1 text-sm text-slate-600">Gruppi al volo, piccole sfide di engineering risolte in 20 minuti.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 border border-slate-200">
+        <div class="text-2xl">🧱</div>
+        <h3 class="mt-2 font-bold">Stazione LEGO</h3>
+        <p class="mt-1 text-sm text-slate-600">Trasmissioni, ingranaggi, leve. Funziona a tutte le età.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 border border-slate-200">
+        <div class="text-2xl">🖨️</div>
+        <h3 class="mt-2 font-bold">Stampa 3D dal vivo</h3>
+        <p class="mt-1 text-sm text-slate-600">Un pezzo nasce strato dopo strato. Dal disegno CAD all'oggetto in mano.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 border border-slate-200">
+        <div class="text-2xl">⚙️</div>
+        <h3 class="mt-2 font-bold">Esperimenti engineering</h3>
+        <p class="mt-1 text-sm text-slate-600">Sensori, motori, piccoli circuiti. La differenza tra teoria e pratica.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 border border-slate-200">
+        <div class="text-2xl">💬</div>
+        <h3 class="mt-2 font-bold">Q&A con il team Carcadonti</h3>
+        <p class="mt-1 text-sm text-slate-600">Tutte le domande: stagione, tempi, costi, come si entra, cosa si impara.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- PER CHI -->
 <section class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-  <div class="p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-100">
-    <h2 class="text-2xl font-bold">Non eri all'Hack Day?</h2>
-    <p class="mt-3 text-slate-700">
-      Nessun problema. Il team continua: stagione FTC, riunioni, costruzione, sfide. Se vuoi unirti — o anche solo capire se fa per te — lascia i tuoi contatti e ti scriviamo quando partono le prossime occasioni per vederci.
-    </p>
-    <a href="join.html" class="inline-block mt-5 px-6 py-3 rounded-lg bg-accent hover:bg-accent2 text-white font-semibold">Lascia i tuoi contatti</a>
+  <h2 class="text-2xl sm:text-3xl font-bold">A chi è rivolto</h2>
+  <ul class="mt-6 space-y-3 text-slate-700">
+    <li class="flex gap-3"><span class="text-accent font-bold">·</span> <strong>Classe 2S</strong> — protagonisti della Competizione di Innovazione</li>
+    <li class="flex gap-3"><span class="text-accent font-bold">·</span> <strong>Studenti del Kandinsky</strong> di tutti gli indirizzi, curiosi di robotica, design, coding o engineering</li>
+    <li class="flex gap-3"><span class="text-accent font-bold">·</span> <strong>Famiglie</strong> che vogliono capire se è il percorso giusto per i propri figli</li>
+    <li class="flex gap-3"><span class="text-accent font-bold">·</span> <strong>Docenti e dirigenza</strong> interessati al programma FTC e alla sua integrazione con la scuola</li>
+    <li class="flex gap-3"><span class="text-accent font-bold">·</span> <strong>Curiosi esterni</strong> che vogliono vedere come si costruisce un robot da zero</li>
+  </ul>
+  <p class="mt-6 text-slate-600 text-sm italic">L'ingresso è libero e gratuito. Se vuoi essere ricontattato dopo l'evento, <a href="join.html" class="text-accent hover:underline">lascia i tuoi contatti</a>.</p>
+</section>
+
+<!-- PARTNER -->
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-center text-sm text-slate-500 font-semibold uppercase tracking-wide">In collaborazione con</p>
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-10">
+      <div class="text-center">
+        <p class="font-bold text-slate-800">🏫 Liceo Kandinsky</p>
+        <p class="text-xs text-slate-500">Scuola ospitante</p>
+      </div>
+      <div class="text-center">
+        <p class="font-bold text-slate-800">🤝 Artù Onlus</p>
+        <p class="text-xs text-slate-500">Partner educativo</p>
+      </div>
+      <div class="text-center">
+        <p class="font-bold text-slate-800">🦈 Team Carcadonti</p>
+        <p class="text-xs text-slate-500">Team FTC</p>
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- CTA -->
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center">
+  <h2 class="text-3xl sm:text-4xl font-bold">Ci vediamo il 29 maggio</h2>
+  <p class="mt-3 text-slate-600">Vuoi essere informato in vista dell'evento o restare in contatto con il team? Lascia qui i tuoi dati.</p>
+  <a href="join.html" class="inline-block mt-8 px-8 py-4 rounded-lg bg-accent hover:bg-accent2 text-white font-bold text-lg">Lascia i tuoi contatti</a>
 </section>
 
 <footer class="bg-slate-900 text-slate-400 text-sm border-t border-slate-800">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row justify-between gap-4">
-    <div><p class="text-white font-semibold">FTC Robotics Milano</p><p class="mt-1">Programma FIRST Tech Challenge · 2026</p></div>
-    <div class="flex gap-5">
-      <a href="ftc.html" class="hover:text-white">FTC</a><a href="hackday.html" class="hover:text-white">Hack Day</a>
-      <a href="parents.html" class="hover:text-white">Genitori</a><a href="resources.html" class="hover:text-white">Risorse</a><a href="join.html" class="hover:text-white">Unisciti</a>
+    <div><p class="text-white font-semibold">Carcadonti · FTC Robotics</p><p class="mt-1">Liceo Kandinsky · in collaborazione con Artù Onlus</p></div>
+    <div class="flex gap-5 flex-wrap">
+      <a href="ftc.html" class="hover:text-white">FTC</a><a href="hackday.html" class="hover:text-white">29 maggio</a>
+      <a href="school.html" class="hover:text-white">Scuola</a><a href="parents.html" class="hover:text-white">Genitori</a>
+      <a href="resources.html" class="hover:text-white">Risorse</a><a href="join.html" class="hover:text-white">Unisciti</a>
     </div>
   </div>
 </footer>
