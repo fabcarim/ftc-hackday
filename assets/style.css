@@ -7,3 +7,30 @@ body { -webkit-font-smoothing: antialiased; }
 
 /* Prose tweaks */
 .prose-tight p { margin-top: .75rem; }
+
+/* Feedback form — scale options (1-5) */
+.scale-opt { cursor: pointer; }
+.scale-opt span {
+  display: grid; place-items: center;
+  width: 48px; height: 48px;
+  border: 2px solid #e2e8f0; border-radius: 12px;
+  font-weight: 700; color: #475569;
+  transition: all .15s ease;
+}
+.scale-opt input:checked + span {
+  background: #f97316; border-color: #f97316; color: #fff;
+}
+.scale-opt:hover span { border-color: #fb923c; }
+.scale-opt input:focus-visible + span { outline: 2px solid #f97316; outline-offset: 2px; }
+
+/* Feedback form — checkbox / radio options */
+.check-opt {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .7rem .9rem;
+  border: 2px solid #e2e8f0; border-radius: 12px;
+  cursor: pointer; font-size: .9rem;
+  transition: all .15s ease;
+}
+.check-opt:hover { border-color: #fb923c; }
+.check-opt input { accent-color: #f97316; width: 18px; height: 18px; flex-shrink: 0; }
+.check-opt:has(input:checked) { border-color: #f97316; background: #fff7ed; }

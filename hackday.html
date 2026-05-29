@@ -107,22 +107,89 @@
       <p class="mt-3 text-white/90 max-w-xl mx-auto">1-2 minuti, è anonimo. Il tuo feedback ci aiuta a migliorare le prossime attività.</p>
     </div>
 
-    <!-- FORM INCORPORATO -->
-    <div class="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
-      <!-- Quando avrai il link del form feedback, sostituisci FEEDBACK_FORM_URL con
-           l'URL di compilazione + "?embedded=true". Esempio:
-           src="https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true" -->
-      <iframe id="feedbackFrame"
-              src="FEEDBACK_FORM_URL"
-              width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
-              class="w-full"
-              onerror="this.style.display='none';document.getElementById('feedbackFallback').style.display='block'">
-        Caricamento…
-      </iframe>
+    <!-- FORM NATIVO -->
+    <div class="mt-8 bg-white text-ink rounded-2xl shadow-xl p-6 sm:p-10">
+      <form id="feedbackForm" class="space-y-8">
+
+        <!-- 1. Voto giornata -->
+        <div>
+          <label class="block font-semibold">1. Quanto ti è piaciuta la giornata? <span class="text-accent">*</span></label>
+          <div class="mt-3 flex flex-wrap gap-2" data-scale="voto">
+            <label class="scale-opt"><input type="radio" name="voto" value="1" required class="sr-only"><span>1</span></label>
+            <label class="scale-opt"><input type="radio" name="voto" value="2" class="sr-only"><span>2</span></label>
+            <label class="scale-opt"><input type="radio" name="voto" value="3" class="sr-only"><span>3</span></label>
+            <label class="scale-opt"><input type="radio" name="voto" value="4" class="sr-only"><span>4</span></label>
+            <label class="scale-opt"><input type="radio" name="voto" value="5" class="sr-only"><span>5</span></label>
+          </div>
+          <div class="mt-1 flex justify-between text-xs text-slate-400 max-w-[260px]"><span>Per niente</span><span>Tantissimo</span></div>
+        </div>
+
+        <!-- 2. Interesse robotica -->
+        <div>
+          <label class="block font-semibold">2. Quanto è cresciuto il tuo interesse per la robotica? <span class="text-accent">*</span></label>
+          <div class="mt-3 flex flex-wrap gap-2" data-scale="interesse">
+            <label class="scale-opt"><input type="radio" name="interesse" value="1" required class="sr-only"><span>1</span></label>
+            <label class="scale-opt"><input type="radio" name="interesse" value="2" class="sr-only"><span>2</span></label>
+            <label class="scale-opt"><input type="radio" name="interesse" value="3" class="sr-only"><span>3</span></label>
+            <label class="scale-opt"><input type="radio" name="interesse" value="4" class="sr-only"><span>4</span></label>
+            <label class="scale-opt"><input type="radio" name="interesse" value="5" class="sr-only"><span>5</span></label>
+          </div>
+          <div class="mt-1 flex justify-between text-xs text-slate-400 max-w-[260px]"><span>Per niente</span><span>Moltissimo</span></div>
+        </div>
+
+        <!-- 3. Cosa piaciuto -->
+        <div>
+          <label class="block font-semibold">3. Cosa ti è piaciuto di più?</label>
+          <div class="mt-3 grid sm:grid-cols-2 gap-2">
+            <label class="check-opt"><input type="checkbox" name="piaciuto" value="I robot in azione"><span>I robot in azione</span></label>
+            <label class="check-opt"><input type="checkbox" name="piaciuto" value="Le sfide / mini-challenge"><span>Le sfide / mini-challenge</span></label>
+            <label class="check-opt"><input type="checkbox" name="piaciuto" value="Costruire con le mani"><span>Costruire con le mani</span></label>
+            <label class="check-opt"><input type="checkbox" name="piaciuto" value="La parte di coding"><span>La parte di coding</span></label>
+            <label class="check-opt"><input type="checkbox" name="piaciuto" value="Il lavoro di squadra"><span>Il lavoro di squadra</span></label>
+            <label class="check-opt"><input type="checkbox" name="piaciuto" value="Conoscere il team"><span>Conoscere il team</span></label>
+            <label class="check-opt"><input type="checkbox" name="piaciuto" value="L'atmosfera"><span>L'atmosfera della giornata</span></label>
+          </div>
+        </div>
+
+        <!-- 4. Porti a casa -->
+        <div>
+          <label class="block font-semibold" for="fb_casa">4. Cosa ti porti a casa da questa giornata?</label>
+          <textarea id="fb_casa" name="porto_a_casa" rows="2" class="mt-2 w-full rounded-lg border border-slate-300 p-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"></textarea>
+        </div>
+
+        <!-- 5. Migliorare -->
+        <div>
+          <label class="block font-semibold" for="fb_migliora">5. Cosa miglioreresti?</label>
+          <textarea id="fb_migliora" name="miglioreresti" rows="2" class="mt-2 w-full rounded-lg border border-slate-300 p-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"></textarea>
+        </div>
+
+        <!-- 6. Entrare in team -->
+        <div>
+          <label class="block font-semibold">6. Ti piacerebbe entrare in un team FTC al Kandinsky?</label>
+          <div class="mt-3 flex flex-col gap-2">
+            <label class="check-opt"><input type="radio" name="entrare" value="Sì, decisamente"><span>Sì, decisamente</span></label>
+            <label class="check-opt"><input type="radio" name="entrare" value="Forse, vorrei saperne di più"><span>Forse, vorrei saperne di più</span></label>
+            <label class="check-opt"><input type="radio" name="entrare" value="Per ora no"><span>Per ora no</span></label>
+          </div>
+        </div>
+
+        <!-- 7. Contatto facoltativo -->
+        <div>
+          <label class="block font-semibold" for="fb_contatto">7. Vuoi essere ricontattato? Lascia nome ed email <span class="text-slate-400 font-normal">(facoltativo)</span></label>
+          <input id="fb_contatto" name="contatto" type="text" class="mt-2 w-full rounded-lg border border-slate-300 p-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none" placeholder="Es. Giulia Rossi — giulia@email.it">
+        </div>
+
+        <button type="submit" id="fbSubmit" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-accent hover:bg-accent2 text-white font-bold text-lg">Invia il feedback</button>
+        <p id="fbError" class="text-sm text-red-600" style="display:none">Qualcosa è andato storto. Riprova tra poco.</p>
+      </form>
+
+      <!-- Messaggio di grazie (nascosto finché non si invia) -->
+      <div id="feedbackThanks" class="text-center py-10" style="display:none">
+        <div class="text-5xl">🦈</div>
+        <h3 class="mt-4 text-2xl font-bold">Grazie per il tuo feedback!</h3>
+        <p class="mt-2 text-slate-600">Ci aiuta tantissimo a migliorare. A presto!</p>
+      </div>
     </div>
-    <p id="feedbackFallback" class="mt-4 text-center text-sm text-white/90" style="display:none">
-      Il modulo non si carica? <a href="FEEDBACK_FORM_URL" target="_blank" rel="noopener" class="underline font-semibold">Aprilo in una nuova scheda →</a>
-    </p>
   </div>
 </section>
 
@@ -261,5 +328,53 @@
   </div>
 </footer>
 <script src="assets/nav.js"></script>
+<script>
+(function () {
+  // URL del Web App Apps Script che riceve e salva le risposte.
+  // Sostituire con l'URL del deployment (finisce con /exec).
+  var WEBAPP_URL = "WEBAPP_URL_PLACEHOLDER";
+
+  var form = document.getElementById('feedbackForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('fbSubmit');
+    var err = document.getElementById('fbError');
+    err.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Invio…';
+
+    var fd = new FormData(form);
+    // raggruppa le checkbox "piaciuto" in un'unica stringa
+    var piaciuto = fd.getAll('piaciuto').join(', ');
+    fd.delete('piaciuto');
+    fd.append('piaciuto', piaciuto);
+
+    var params = new URLSearchParams();
+    fd.forEach(function (v, k) { params.append(k, v); });
+
+    if (WEBAPP_URL.indexOf('http') !== 0) {
+      // URL non ancora configurato: mostra comunque il ringraziamento
+      showThanks();
+      return;
+    }
+
+    fetch(WEBAPP_URL, { method: 'POST', mode: 'no-cors', body: params })
+      .then(function () { showThanks(); })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Invia il feedback';
+        err.style.display = 'block';
+      });
+  });
+
+  function showThanks() {
+    form.style.display = 'none';
+    document.getElementById('feedbackThanks').style.display = 'block';
+    document.getElementById('feedback').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+})();
+</script>
 </body>
 </html>

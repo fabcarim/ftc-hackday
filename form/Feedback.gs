@@ -1,97 +1,84 @@
 /**
- * FTC @ Kandinsky — Form FEEDBACK giornata Hackathon
+ * FTC @ Kandinsky — Backend del form FEEDBACK (Google Apps Script Web App)
  *
- * COME USARLO (60 secondi):
- *  1. Vai su https://script.google.com
- *  2. New project
- *  3. Cancella il codice di default, incolla TUTTO questo file
- *  4. Salva (Ctrl+S)
- *  5. Premi Run sulla funzione createFeedbackForm
- *  6. Autorizza l'accesso (prima volta)
- *  7. Apri View → Logs: trovi 3 link (compilazione, modifica, foglio risposte)
+ * Questo script riceve le risposte del form che è DENTRO il sito
+ * (pagina "Evento 29 maggio") e le salva in un Google Sheet sul tuo Drive.
  *
- * Poi mandami il "Link compilazione" e lo incorporo nella pagina dell'evento.
+ * ============================================================
+ * COME PUBBLICARLO (una volta sola, ~1 minuto):
+ * ============================================================
+ *  1. Vai su https://script.google.com  →  New project
+ *  2. Cancella il codice di default e incolla TUTTO questo file
+ *  3. Salva (Ctrl+S)
+ *  4. In alto a destra: Deploy  →  New deployment
+ *  5. Clicca l'ingranaggio ⚙ accanto a "Select type"  →  Web app
+ *  6. Imposta:
+ *        - Description:    Feedback FTC
+ *        - Execute as:     Me (il tuo account)
+ *        - Who has access: Anyone        ← IMPORTANTE: "Chiunque"
+ *  7. Deploy  →  autorizza l'accesso (come per l'altro form)
+ *  8. Copia il "Web app URL" (finisce con /exec)  →  mandamelo
+ *
+ * Io lo inserisco nel sito e il form inizia a salvare le risposte.
+ * Per vedere le risposte: esegui una volta la funzione apriFoglio()
+ * (oppure te lo dà il log al primo invio) — è un Google Sheet.
+ * ============================================================
  */
 
-function createFeedbackForm() {
-  var form = FormApp.create('FTC Hackathon — Il tuo feedback')
-    .setDescription(
-      "Grazie per aver partecipato alla giornata! Raccontaci com'è andata: " +
-      "bastano 1-2 minuti e ci aiuti a migliorare. Le risposte sono anonime."
-    )
-    .setCollectEmail(false)
-    .setLimitOneResponsePerUser(false)
-    .setProgressBar(true)
-    .setConfirmationMessage('Grazie per il tuo feedback! Ci aiuta tantissimo. 🦈');
+var SHEET_NAME = 'FTC Hackathon — Feedback (risposte)';
+var HEADERS = ['Timestamp', 'Voto giornata', 'Interesse robotica',
+               'Piaciuto di più', 'Si porta a casa', 'Da migliorare',
+               'Vuole entrare', 'Contatto'];
 
-  // 1 — Voto complessivo
-  form.addScaleItem()
-    .setTitle('Quanto ti è piaciuta la giornata?')
-    .setBounds(1, 5)
-    .setLabels('Per niente', 'Tantissimo')
-    .setRequired(true);
+function doPost(e) {
+  try {
+    var sheet = getSheet();
+    var p = (e && e.parameter) ? e.parameter : {};
+    sheet.appendRow([
+      new Date(),
+      p.voto || '',
+      p.interesse || '',
+      p.piaciuto || '',
+      p.porto_a_casa || '',
+      p.miglioreresti || '',
+      p.entrare || '',
+      p.contatto || ''
+    ]);
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
 
-  // 2 — Interesse per la robotica
-  form.addScaleItem()
-    .setTitle("Quanto è cresciuto il tuo interesse per la robotica dopo oggi?")
-    .setBounds(1, 5)
-    .setLabels('Per niente', 'Moltissimo')
-    .setRequired(true);
+// Permette di verificare che il Web App sia online aprendo l'URL nel browser.
+function doGet() {
+  return ContentService.createTextOutput('FTC Feedback endpoint attivo.');
+}
 
-  // 3 — Cosa è piaciuto di più
-  form.addCheckboxItem()
-    .setTitle('Cosa ti è piaciuto di più?')
-    .setChoiceValues([
-      'I robot in azione',
-      'Le sfide / mini-challenge',
-      'Costruire qualcosa con le mani',
-      'La parte di coding',
-      'Il lavoro di squadra',
-      'Conoscere il team',
-      'L\'atmosfera della giornata'
-    ])
-    .showOtherOption(true)
-    .setRequired(false);
+function getSheet() {
+  var props = PropertiesService.getScriptProperties();
+  var id = props.getProperty('SHEET_ID');
+  var ss;
+  if (id) {
+    try { ss = SpreadsheetApp.openById(id); } catch (e) { ss = null; }
+  }
+  if (!ss) {
+    ss = SpreadsheetApp.create(SHEET_NAME);
+    props.setProperty('SHEET_ID', ss.getId());
+    var sh = ss.getSheets()[0];
+    sh.appendRow(HEADERS);
+    sh.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
+    Logger.log('Foglio risposte creato: ' + ss.getUrl());
+  }
+  return ss.getSheets()[0];
+}
 
-  // 4 — Testo libero: piaciuto
-  form.addParagraphTextItem()
-    .setTitle('Cosa ti porti a casa da questa giornata?')
-    .setRequired(false);
-
-  // 5 — Testo libero: da migliorare
-  form.addParagraphTextItem()
-    .setTitle('Cosa miglioreresti?')
-    .setRequired(false);
-
-  // 6 — Vorrebbe partecipare
-  form.addMultipleChoiceItem()
-    .setTitle('Ti piacerebbe entrare in un team FTC al Kandinsky?')
-    .setChoiceValues([
-      'Sì, decisamente',
-      'Forse, vorrei saperne di più',
-      'Per ora no'
-    ])
-    .setRequired(false);
-
-  // 7 — Contatto facoltativo (per chi vuole essere ricontattato)
-  form.addTextItem()
-    .setTitle('Se vuoi essere ricontattato, lascia nome ed email (facoltativo)')
-    .setRequired(false);
-
-  // Foglio risposte collegato
-  var ss = SpreadsheetApp.create('FTC Hackathon — Feedback (risposte)');
-  form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
-
-  Logger.log('============================================');
-  Logger.log('FORM FEEDBACK CREATO');
-  Logger.log('============================================');
-  Logger.log('Link compilazione (mandami questo):');
-  Logger.log(form.getPublishedUrl());
-  Logger.log('');
-  Logger.log('Link modifica:');
-  Logger.log(form.getEditUrl());
-  Logger.log('');
-  Logger.log('Foglio risposte:');
-  Logger.log(ss.getUrl());
-  Logger.log('============================================');
+// Esegui questa funzione per stampare il link del foglio risposte.
+function apriFoglio() {
+  var sheet = getSheet();
+  Logger.log('Foglio risposte: ' + sheet.getParent().getUrl());
 }
