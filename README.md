@@ -1,6 +1,6 @@
 # Carcadonti — Sito team FTC
 
-Sito statico del team Carcadonti (FTC Robotics) del Liceo Kandinsky.
+Sito statico del team Carcadonti (FTC Robotics) dell'Istituto Professionale W. Kandinsky di Milano (dipartimenti: Grafica, Moda, Audiovisivo e multimediale, Servizi socio-sanitari).
 Evento di Robotica: 29 maggio 2026, Aula Magna, 8:40-14:00.
 
 Pubblicato su GitHub Pages: https://fabcarim.github.io/ftc-hackday/
