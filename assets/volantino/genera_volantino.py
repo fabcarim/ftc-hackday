@@ -15,6 +15,7 @@ from reportlab.pdfgen import canvas
 URL = "https://fabcarim.github.io/ftc-hackday/entra/"
 URL_VISIBILE = "fabcarim.github.io/ftc-hackday/entra"
 OUT = "assets/volantino/volantino-reclutamento-A4.pdf"
+LOGO = "assets/logo-kandinsky.png"   # marchio dell'istituto, dalla testata del sito della scuola
 
 INK = HexColor("#0b1220")
 ACCENT = HexColor("#e2660a")   # arancio leggermente scurito: regge la fotocopia in grigio
@@ -82,17 +83,22 @@ c.setAuthor("Carcadonti - Istituto Kandinsky")
 y = H - M
 
 # ---- occhiello -------------------------------------------------------------
+logo_larghezza = 21 * mm
+logo_altezza = logo_larghezza * 333 / 361
+c.drawImage(LOGO, W - M - logo_larghezza, y - logo_altezza,
+            logo_larghezza, logo_altezza, mask=None)
+
 c.setFillColor(ACCENT)
 c.setFont("Helvetica-Bold", 9.5)
-c.drawString(M, y - 4 * mm, "ISTITUTO KANDINSKY   ·   DUE SQUADRE DI ROBOTICA")
+c.drawString(M, y - 4 * mm, "ISTITUTO W. KANDINSKY   ·   DUE SQUADRE DI ROBOTICA")
 y -= 13 * mm
 
 # ---- titolo ----------------------------------------------------------------
 c.setFillColor(INK)
 c.setFont("Helvetica-Bold", 37)
-c.drawString(M, y - 10 * mm, "Costruiamo un robot.")
+c.drawString(M, y - 10 * mm, "Da un foglio bianco")
 c.setFillColor(ACCENT)
-c.drawString(M, y - 23 * mm, "Ci serve gente.")
+c.drawString(M, y - 23 * mm, "a un robot in gara.")
 y -= 32 * mm
 
 c.setStrokeColor(LINEA)
@@ -103,19 +109,20 @@ y -= 9 * mm
 # ---- cos'e' ----------------------------------------------------------------
 y = testo_a_capo(
     c,
-    "Questo è FIRST® Tech Challenge: una squadra, una stagione, un robot costruito "
-    "da zero per gareggiare. Il gioco di quest'anno si chiama BIOBUZZ™. Al Kandinsky "
-    "ci sono due squadre, e stanno cercando nuovi membri.",
+    "Questo è FIRST® Tech Challenge: ogni autunno la sfida dell'anno viene svelata "
+    "in diretta mondiale. Quest'anno si chiama BIOBUZZ™. Da lì sei mesi per progettare "
+    "un robot, costruirlo e portarlo in campo contro squadre di tutta Italia. Al Kandinsky "
+    "ci sono due squadre, e c'è posto.",
     M, y, W - 2 * M, "Helvetica", 11.5, 6 * mm, INK)
 y -= 6 * mm
 
 # ---- il messaggio ----------------------------------------------------------
 c.setFillColor(INK)
 c.setFont("Helvetica-Bold", 20)
-c.drawString(M, y, "Non devi saperne niente di robotica.")
+c.drawString(M, y, "Si entra da dove sei già bravo.")
 y -= 8 * mm
 y = testo_a_capo(
-    c, "Nessuno qui parte sapendo: si impara in squadra. Tu entra da dove sei già forte.",
+    c, "Tutti cominciano da zero e imparano in squadra. Scegli la tua porta d'ingresso.",
     M, y, W - 2 * M, "Helvetica", 11, 5.6 * mm, GRIGIO)
 y -= 5 * mm
 
@@ -123,10 +130,14 @@ y -= 5 * mm
 larghezza_box = (W - 2 * M - 6 * mm) / 2
 altezza_box = 29 * mm
 porte = [
-    ("Costruire e programmare", "Progetti il robot, lo monti, scrivi il codice, lo guidi in gara."),
-    ("Grafica e identità", "Logo, volantini, il quaderno di progetto che i giudici valutano."),
-    ("Video e racconto", "Riprese, montaggio, social. Il video che presenta la squadra."),
-    ("Persone e comunità", "Laboratori di robotica per bambini e anziani: portano punti e premi."),
+    ("Costruisci e programmi",
+     "Disegni il robot in 3D, lo monti pezzo per pezzo, scrivi il codice e lo guidi in gara."),
+    ("Dai un volto alla squadra",
+     "Il logo, i colori, il quaderno di progetto che i giudici sfogliano e premiano."),
+    ("Racconti la stagione",
+     "Riprese ai box, montaggio, social: il video che presenta la squadra ai giudici."),
+    ("Porti la robotica fuori",
+     "Laboratori per bambini e anziani. In gara vale punti e premi veri."),
 ]
 for i, (titolo, descrizione) in enumerate(porte):
     col, rig = i % 2, i // 2
@@ -159,7 +170,7 @@ c.drawString(tx, ty, "INQUADRA COL TELEFONO")
 c.setFillColor(white)
 c.setFont("Helvetica-Bold", 15)
 c.drawString(tx, ty - 9 * mm, "Guarda cos'è, in 30 secondi.")
-testo_a_capo(c, "Poi, se ti va, lasci i tuoi contatti. Due minuti, non ti impegna a niente.",
+testo_a_capo(c, "Poi lasci i tuoi contatti: due minuti, e ti diciamo quando si comincia.",
              tx, ty - 17 * mm, qr_x - tx - 10 * mm, "Helvetica", 9.5, 4.6 * mm,
              HexColor("#9fb0c9"))
 c.setFont("Helvetica", 8.5)
@@ -173,8 +184,8 @@ c.setFillColor(GRIGIO)
 c.drawString(M, M + 4 * mm,
              "FIRST®, FIRST® Tech Challenge e BIOBUZZ™ sono marchi di FIRST® "
              "(For Inspiration and Recognition of Science and Technology).")
-c.drawString(M, M, "Squadre Carcadonti #33480 e #34692 · Istituto Kandinsky, Milano "
-                   "· in collaborazione con Artù Onlus")
+c.drawString(M, M, "Squadre Carcadonti #33480 e #34692 · Istituto Professionale per i Servizi "
+                   "Commerciali W. Kandinsky, via Saponaro 20 Milano · con Artù Onlus")
 
 c.showPage()
 c.save()
