@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Entra in squadra — FIRST Tech Challenge @ Kandinsky</title>
+<meta name="description" content="Due squadre di robotica all'Istituto Kandinsky. Non serve saperne niente: guarda di cosa si tratta e lascia i tuoi contatti." />
+<meta name="robots" content="index,follow" />
+
+<!-- ===================================================================
+     PER CAMBIARE IL VIDEO IN FUTURO: modifica SOLO il codice che sta
+     subito dopo  /embed/  nella riga <iframe> qui sotto (cercala, e'
+     l'unica del file). Il resto della pagina non si tocca.
+     Oggi: gO98TkgY0kI  = lancio ufficiale BIOBUZZ 2026-2027.
+     Il codice di un video YouTube e' quello che compare nel suo
+     indirizzo dopo  watch?v=
+     =================================================================== -->
+
+<style>
+  :root{
+    --ink:#0b1220; --ink-2:#131c2e; --line:#26324a;
+    --accent:#f97316; --accent-2:#fb923c;
+    --text:#f1f5f9; --muted:#9fb0c9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink); color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5; padding-bottom:env(safe-area-inset-bottom);
+  }
+  .wrap{max-width:640px;margin:0 auto}
+
+  /* 1. il video, prima cosa visibile */
+  .video{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+
+  .pad{padding:20px 18px 0}
+  .kicker{
+    display:inline-block;font-size:11px;font-weight:800;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--accent-2);
+    border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin-bottom:12px;
+  }
+  h1{font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-.01em}
+  .lede{margin-top:10px;color:var(--muted);font-size:16px}
+  .lede strong{color:var(--text);font-weight:700}
+
+  h2{margin-top:30px;font-size:19px;font-weight:800;line-height:1.25}
+  h2 .hl{color:var(--accent-2)}
+  .sub{margin-top:8px;color:var(--muted);font-size:15px}
+
+  ul{list-style:none;margin-top:16px;display:grid;gap:9px}
+  li{
+    background:var(--ink-2);border:1px solid var(--line);border-radius:13px;
+    padding:13px 15px;display:flex;gap:12px;align-items:flex-start;
+  }
+  li .ico{font-size:20px;line-height:1.25;flex:none}
+  li b{display:block;font-size:15px;font-weight:700}
+  li span.d{display:block;margin-top:2px;color:var(--muted);font-size:13.5px}
+
+  /* 3. una sola azione */
+  .cta-zone{margin-top:30px;padding:0 18px 34px}
+  .cta{
+    display:block;background:var(--accent);color:#fff;text-decoration:none;
+    text-align:center;font-size:18px;font-weight:800;
+    padding:17px 20px;border-radius:13px;
+  }
+  .cta:active{background:var(--accent-2)}
+  .cta-note{margin-top:11px;text-align:center;color:var(--muted);font-size:13.5px}
+
+  footer{
+    border-top:1px solid var(--line);padding:18px;
+    color:#7b8ba5;font-size:11.5px;text-align:center;
+  }
+  footer a{color:#7b8ba5}
+
+  @media (min-width:620px){
+    h1{font-size:32px} h2{font-size:22px} .pad{padding:26px 22px 0}
+    .cta-zone{padding:0 22px 40px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1. IL VIDEO — prima cosa visibile, nessuno scroll -->
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/gO98TkgY0kI?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1" title="Il gioco della stagione — FIRST Tech Challenge" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <!-- 2. una riga che dice cos'e', per chi guarda senza audio -->
+  <div class="pad">
+    <span class="kicker">Istituto Kandinsky</span>
+    <h1>Costruiamo un robot. Ci serve gente.</h1>
+    <p class="lede">
+      Questo è <strong>FIRST<sup>®</sup> Tech Challenge</strong>: una squadra, una stagione, un robot
+      costruito da zero per gareggiare. Il gioco di quest'anno si chiama <strong>BIOBUZZ&trade;</strong>.
+      Al Kandinsky ci sono <strong>due squadre</strong>, e stanno cercando nuovi membri.
+    </p>
+
+    <h2>Non devi <span class="hl">saperne niente</span> di robotica.</h2>
+    <p class="sub">Nessuno qui parte sapendo. Si impara in squadra. Tu entra da dove sei già forte:</p>
+
+    <ul>
+      <li>
+        <span class="ico">🔧</span>
+        <span><b>Costruire e programmare</b>
+        <span class="d">Progetti il robot, lo monti, scrivi il codice, lo guidi in gara.</span></span>
+      </li>
+      <li>
+        <span class="ico">🎨</span>
+        <span><b>Grafica e identità</b>
+        <span class="d">Logo, volantini, il quaderno di progetto che i giudici valutano davvero.</span></span>
+      </li>
+      <li>
+        <span class="ico">🎬</span>
+        <span><b>Video e racconto</b>
+        <span class="d">Riprese, montaggio, social. Il video che presenta la squadra ai giudici.</span></span>
+      </li>
+      <li>
+        <span class="ico">🤝</span>
+        <span><b>Persone e comunità</b>
+        <span class="d">Laboratori di robotica per bambini e anziani. Non è un extra: porta punti e premi.</span></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 3. una sola azione -->
+  <div class="cta-zone">
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfVXMfX9aS1WCujmCmwoeu_yAfy88SnSEBbqHY2jG5tylxX4A/viewform" target="_blank" rel="noopener">Lascia i tuoi contatti →</a>
+    <p class="cta-note">Due minuti. Non ti impegna a niente:<br/>ti diciamo solo quando e dove si comincia.</p>
+  </div>
+
+  <footer>
+    FIRST<sup>®</sup>, FIRST<sup>®</sup> Tech Challenge e BIOBUZZ&trade; sono marchi di
+    FIRST<sup>®</sup> (For Inspiration and Recognition of Science and Technology).<br/>
+    <a href="../index.html">Il sito della squadra →</a>
+  </footer>
+
+</div>
+</body>
+</html>

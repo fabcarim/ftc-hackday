@@ -46,3 +46,35 @@ Il link del Google Form è nel pulsante "Compila il modulo" in `join.html`. Cerc
 - `resources.html` — video e link
 - `assets/` — CSS, JS, immagini
 - `form/Code.gs` — Apps Script per generare il Google Form
+
+## Pagina del QR del volantino (`entra/`)
+
+**Indirizzo stampato sul volantino: https://fabcarim.github.io/ftc-hackday/entra/**
+
+⚠️ Questo indirizzo è su carta: **non va mai cambiato né rinominato**. Non contiene anno né
+stagione proprio perché il volantino non scada.
+
+QR pronto per la stampa in `assets/qr/`:
+- `qr-entra.svg` e `qr-entra.pdf` — vettoriali, da usare per impaginare il volantino
+- `qr-entra-trasparente.svg` — stesso QR senza sfondo bianco
+- `qr-entra.png` — solo per bozze a schermo
+
+Correzione errori livello H: regge fotocopie, stampa scadente e un logo sovrapposto al centro
+(purché copra al massimo ~25% dell'area). Stampalo almeno **2 cm di lato**, meglio 3.
+
+### Cambiare il video della pagina
+
+Apri `entra/index.html`, cerca l'unica riga che contiene `<iframe`, e sostituisci **solo** il
+codice subito dopo `/embed/` con quello del nuovo video. Il codice di un video YouTube è la parte
+del suo indirizzo che viene dopo `watch?v=`.
+
+Esempio — video attuale:
+
+    .../embed/gO98TkgY0kI?autoplay=1&mute=1...
+
+Se il nuovo video fosse `https://www.youtube.com/watch?v=ABC123xyz99`, diventa:
+
+    .../embed/ABC123xyz99?autoplay=1&mute=1...
+
+Non toccare nient'altro della riga. Poi commit + push come per le altre pagine. L'indirizzo del
+volantino resta lo stesso: il QR continua a funzionare.
