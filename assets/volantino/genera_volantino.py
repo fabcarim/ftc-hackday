@@ -103,13 +103,13 @@ y -= 11 * mm + 7 * mm
 
 # ---- apertura ------------------------------------------------------------
 h_apertura = COL / 2.45
-foto(c, "apertura-robot.jpg", M, y - h_apertura, COL, h_apertura)
+foto(c, "arena-match.jpg", M, y - h_apertura, COL, h_apertura)
 y -= h_apertura + 5 * mm
 
 c.setFont("Helvetica", 7.6)
 c.setFillColor(GRIGIO)
-c.drawString(M, y, "Un robot costruito da una squadra di studenti. "
-                   "Premier Event FIRST® Tech Challenge, Istanbul, giugno 2026.")
+c.drawString(M, y, "Un match di FIRST® Tech Challenge: due robot in campo, il tempo che scorre, "
+                   "la squadra che guarda. FIRST Championship, Detroit.")
 y -= 8 * mm
 
 y = a_capo(c, "Una stagione, una squadra, un robot costruito da zero e portato in gara "
@@ -120,9 +120,9 @@ y = a_capo(c, "Una stagione, una squadra, un robot costruito da zero e portato i
 gap = 4 * mm
 larg = (COL - 2 * gap) / 3
 alt = larg * 2 / 3
-blocchi = [("box-squadra.jpg", "AI BOX, PRIMA DEL MATCH"),
-           ("meccanica.jpg", "MOTORI, CINGHIE, SENSORI"),
-           ("robot-rosso.jpg", "DENTRO LA MACCHINA")]
+blocchi = [("arena-pubblico.jpg", "L'ARENA, NEL GIORNO DI GARA"),
+           ("box-squadra.jpg", "AI BOX, PRIMA DEL MATCH"),
+           ("meccanica.jpg", "MOTORI, CINGHIE, SENSORI")]
 for i, (nome, didascalia) in enumerate(blocchi):
     foto(c, nome, M + i * (larg + gap), y - alt, larg, alt, didascalia)
 y -= alt + 12 * mm
@@ -173,12 +173,15 @@ c.drawString(M, y,
              "FIRST®, FIRST® Tech Challenge e BIOBUZZ™ sono marchi di FIRST® "
              "(For Inspiration and Recognition of Science and Technology).")
 c.drawString(M, y - 3.6 * mm,
+             "Foto dell'arena: Stilfehler, FIRST Championship Detroit 2019, CC BY-SA 4.0 via Wikimedia "
+             "Commons. Foto dei box e della meccanica: team Carcadonti, Istanbul 2026.")
+c.drawString(M, y - 7.2 * mm,
              "Squadre Carcadonti #33480 e #34692 · Istituto Professionale per i Servizi "
              "Commerciali W. Kandinsky, via Saponaro 20 Milano · con Artù Onlus")
 
 c.showPage()
 c.save()
 print(f"scritto {OUT}")
-print(f"margine in fondo: {(y - 3.6*mm - 6*mm)/mm:.1f} mm  (se e' negativo, la pagina trabocca)")
+print(f"margine in fondo: {(y - 7.2*mm - 6*mm)/mm:.1f} mm  (se e' negativo, la pagina trabocca)")
 print(f"QR: {moduli} moduli su {lato_qr} mm -> modulo da {lato_qr/moduli:.2f} mm "
       f"(soglia di sicurezza per la stampa: 0,4 mm)")
