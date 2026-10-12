@@ -34,3 +34,44 @@ body { -webkit-font-smoothing: antialiased; }
 .check-opt:hover { border-color: #fb923c; }
 .check-opt input { accent-color: #f97316; width: 18px; height: 18px; flex-shrink: 0; }
 .check-opt:has(input:checked) { border-color: #f97316; background: #fff7ed; }
+
+/* ---------------------------------------------------------------
+   Video: finche' non si clicca c'e' solo l'anteprima, nessun
+   collegamento a YouTube e nessun cookie. Il player si carica al clic.
+   --------------------------------------------------------------- */
+.video-box { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #0b1220; }
+.video-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-box button {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: grid; place-items: center; gap: .6rem;
+  background: linear-gradient(to top, rgba(11,18,32,.75), rgba(11,18,32,.15));
+  border: 0; cursor: pointer; color: #fff; font: inherit;
+}
+.video-box .play {
+  width: 64px; height: 64px; border-radius: 999px;
+  background: #f97316; display: grid; place-items: center;
+  box-shadow: 0 8px 24px -6px rgba(0,0,0,.5);
+  transition: transform .15s ease;
+}
+.video-box button:hover .play { transform: scale(1.08); }
+.video-box .etichetta { font-weight: 700; font-size: .95rem; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+
+/* ---------------------------------------------------------------
+   Galleria. Per aggiungere una foto basta copiare un <figure>:
+   le dimensioni le decide il CSS.
+   --------------------------------------------------------------- */
+.galleria { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+@media (min-width: 640px) { .galleria { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .galleria { grid-template-columns: repeat(3, 1fr); } }
+.galleria figure { margin: 0; border-radius: 14px; overflow: hidden; position: relative; background: #0b1220; }
+.galleria img { width: 100%; height: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
+.galleria figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 1.6rem .8rem .6rem;
+  background: linear-gradient(to top, rgba(11,18,32,.88), transparent);
+  color: #fff; font-size: .78rem; font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase;
+}
+.galleria .larga { grid-column: 1 / -1; }
+.galleria .larga img { aspect-ratio: 2/1; }

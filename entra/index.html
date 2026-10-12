@@ -4,16 +4,16 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Entra in squadra — FIRST Tech Challenge @ Kandinsky</title>
-<meta name="description" content="Due squadre di robotica all'Istituto W. Kandinsky. Da un foglio bianco a un robot in gara: guarda cos'è e lascia i tuoi contatti." />
+<meta name="description" content="Due squadre di robotica all'Istituto W. Kandinsky. Si costruisce un robot vero e si va in gara. Guarda com'è e lascia i tuoi contatti." />
 <meta name="robots" content="index,follow" />
 
 <!-- ===================================================================
-     PER CAMBIARE IL VIDEO IN FUTURO: modifica SOLO il codice che sta
-     subito dopo  /embed/  nella riga <iframe> qui sotto (cercala, e'
-     l'unica del file). Il resto della pagina non si tocca.
-     Oggi: gO98TkgY0kI  = lancio ufficiale BIOBUZZ 2026-2027.
+     PER CAMBIARE UN VIDEO: modifica solo il codice dentro data-yt="..."
+     e l'indirizzo dell'immagine di anteprima (i.ytimg.com/vi/CODICE/...).
      Il codice di un video YouTube e' quello che compare nel suo
      indirizzo dopo  watch?v=
+     Oggi:  nYApmben7e4 = match veri (1 min 29)
+            sUH3z5a5S9I = come si gioca a BIOBUZZ (4 min 48)
      =================================================================== -->
 
 <style>
@@ -29,125 +29,195 @@
     font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.5; padding-bottom:env(safe-area-inset-bottom);
   }
-  .wrap{max-width:640px;margin:0 auto}
-
-  /* 1. il video, prima cosa visibile */
-  .video{position:relative;width:100%;aspect-ratio:16/9;background:#000}
-  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
-
+  .wrap{max-width:680px;margin:0 auto}
   .pad{padding:20px 18px 0}
+
+  /* video: solo anteprima finche' non si tocca */
+  .video-box{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000}
+  .video-box img{width:100%;height:100%;object-fit:cover;display:block}
+  .video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video-box button{
+    position:absolute;inset:0;width:100%;height:100%;
+    display:grid;place-items:center;gap:10px;
+    background:linear-gradient(to top,rgba(11,18,32,.75),rgba(11,18,32,.1));
+    border:0;cursor:pointer;color:#fff;font:inherit;
+  }
+  .play{width:66px;height:66px;border-radius:999px;background:var(--accent);
+        display:grid;place-items:center;box-shadow:0 8px 24px -6px rgba(0,0,0,.6)}
+  .etichetta{font-weight:700;font-size:.95rem;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+
   .kicker{
     display:inline-block;font-size:11px;font-weight:800;letter-spacing:.09em;
     text-transform:uppercase;color:var(--accent-2);
     border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin-bottom:12px;
   }
-  h1{font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-.01em}
+  h1{font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  h2{margin-top:30px;font-size:20px;font-weight:800;line-height:1.25}
+  h2 .hl{color:var(--accent-2)}
   .lede{margin-top:10px;color:var(--muted);font-size:16px}
   .lede strong{color:var(--text);font-weight:700}
-
-  h2{margin-top:30px;font-size:19px;font-weight:800;line-height:1.25}
-  h2 .hl{color:var(--accent-2)}
   .sub{margin-top:8px;color:var(--muted);font-size:15px}
+  .nota{margin-top:8px;color:#7b8ba5;font-size:12px}
 
-  ul{list-style:none;margin-top:16px;display:grid;gap:9px}
-  li{
-    background:var(--ink-2);border:1px solid var(--line);border-radius:13px;
-    padding:13px 15px;display:flex;gap:12px;align-items:flex-start;
+  /* tre frasi corte */
+  .claim{display:grid;gap:8px;margin-top:18px}
+  .claim div{background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .claim b{display:block;font-size:15px}
+  .claim span{color:var(--muted);font-size:13.5px}
+
+  /* galleria: per aggiungere una foto copia un <figure> */
+  .galleria{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+  .galleria figure{margin:0;position:relative;border-radius:12px;overflow:hidden;background:#000}
+  .galleria img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+  .galleria .larga{grid-column:1/-1}
+  .galleria .larga img{aspect-ratio:2/1}
+  .galleria figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:22px 10px 7px;
+    background:linear-gradient(to top,rgba(11,18,32,.9),transparent);
+    font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
   }
+
+  ul{list-style:none;margin-top:14px;display:grid;gap:9px}
+  li{background:var(--ink-2);border:1px solid var(--line);border-radius:13px;
+     padding:13px 15px;display:flex;gap:12px;align-items:flex-start}
   li .ico{font-size:20px;line-height:1.25;flex:none}
   li b{display:block;font-size:15px;font-weight:700}
   li span.d{display:block;margin-top:2px;color:var(--muted);font-size:13.5px}
 
-  /* 3. una sola azione */
-  .cta-zone{margin-top:30px;padding:0 18px 34px}
-  .cta{
-    display:block;background:var(--accent);color:#fff;text-decoration:none;
-    text-align:center;font-size:18px;font-weight:800;
-    padding:17px 20px;border-radius:13px;
-  }
+  .quando{margin-top:26px;background:var(--ink-2);border:1px solid var(--line);
+          border-radius:16px;padding:18px}
+  .quando p.q{font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-2)}
+  .quando p.g{margin-top:6px;font-size:19px;font-weight:800;line-height:1.25}
+  .quando p.d{margin-top:6px;color:var(--muted);font-size:14px}
+
+  .cta-zone{margin-top:26px;padding:0 18px 30px}
+  .cta{display:block;background:var(--accent);color:#fff;text-decoration:none;
+       text-align:center;font-size:18px;font-weight:800;padding:17px 20px;border-radius:13px}
   .cta:active{background:var(--accent-2)}
+  .cta-2{display:flex;gap:9px;margin-top:9px}
+  .cta-2 a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+           background:var(--ink-2);border:1px solid var(--line);color:var(--text);
+           text-decoration:none;font-size:14px;font-weight:700;padding:13px 10px;border-radius:12px}
   .cta-note{margin-top:11px;text-align:center;color:var(--muted);font-size:13.5px}
 
-  footer{
-    border-top:1px solid var(--line);padding:22px 18px 26px;
-    color:#7b8ba5;font-size:11.5px;text-align:center;
-  }
+  footer{border-top:1px solid var(--line);padding:22px 18px 26px;color:#7b8ba5;font-size:11.5px;text-align:center}
   footer a{color:#7b8ba5}
-  footer img{
-    width:72px;height:auto;display:block;margin:0 auto 12px;
-    background:#fff;padding:5px;border-radius:5px;
-  }
+  footer img{width:72px;height:auto;display:block;margin:0 auto 12px;background:#fff;padding:5px;border-radius:5px}
   footer p{margin-bottom:9px}
   footer p:last-child{margin-bottom:0}
   footer .scuola{color:#9fb0c9;font-size:12px}
   footer .scuola b{color:var(--text)}
 
   @media (min-width:620px){
-    h1{font-size:32px} h2{font-size:22px} .pad{padding:26px 22px 0}
-    .cta-zone{padding:0 22px 40px}
+    h1{font-size:36px} h2{font-size:23px} .pad{padding:26px 22px 0}
+    .claim{grid-template-columns:repeat(3,1fr)}
+    .cta-zone{padding:0 22px 36px}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- 1. IL VIDEO — prima cosa visibile, nessuno scroll -->
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/gO98TkgY0kI?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1" title="Il gioco della stagione — FIRST Tech Challenge" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  <!-- 1. I MATCH, SUBITO -->
+  <div class="video-box" data-yt="nYApmben7e4" data-titolo="FIRST Tech Challenge Highlights">
+    <img src="https://i.ytimg.com/vi/nYApmben7e4/hqdefault.jpg" alt="Anteprima: match di FIRST Tech Challenge" width="480" height="360">
+    <button type="button" aria-label="Guarda i match">
+      <span class="play"><svg width="27" height="27" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="etichetta">Guarda i match · 1 min 29</span>
+    </button>
   </div>
 
-  <!-- 2. una riga che dice cos'e', per chi guarda senza audio -->
   <div class="pad">
     <span class="kicker">Istituto W. Kandinsky</span>
-    <h1>Da un foglio bianco<br/>a un robot in gara.</h1>
+    <h1>Si costruisce un robot vero.<br/>E si va in gara.</h1>
     <p class="lede">
-      Questo è <strong>FIRST<sup>®</sup> Tech Challenge</strong>: ogni autunno la sfida dell'anno viene
-      svelata in diretta mondiale. Quest'anno si chiama <strong>BIOBUZZ&trade;</strong>. Da lì sei mesi
-      per progettare un robot, costruirlo e portarlo in campo contro squadre di tutta Italia.
-      Al Kandinsky ci sono <strong>due squadre</strong>, e <strong>c'è posto</strong>.
+      Questo è <strong>FIRST<sup>®</sup> Tech Challenge</strong>: una squadra, una stagione, un robot
+      costruito da zero. Al Kandinsky ci sono <strong>due squadre</strong>, e <strong>c'è posto</strong>.
     </p>
 
-    <h2>Si entra da dove sei <span class="hl">già bravo</span>.</h2>
-    <p class="sub">Tutti cominciano da zero e imparano in squadra. Scegli la tua porta d'ingresso:</p>
+    <div class="claim">
+      <div><b>Non serve saper già niente</b><span>Si comincia da zero, tutti.</span></div>
+      <div><b>C'è posto per te</b><span>Chi disegna, filma, scrive, organizza.</span></div>
+      <div><b>Si impara facendo</b><span>Con i mentor, in squadra.</span></div>
+    </div>
 
+    <!-- GALLERIA — per aggiungere una foto: copia un <figure> e cambia src e didascalia.
+         Le immagini stanno in ../assets/foto/web/ -->
+    <h2>Com'è <span class="hl">davvero</span></h2>
+    <div class="galleria">
+      <figure class="larga">
+        <img src="../assets/foto/web/arena-match.jpg" alt="Due robot in campo durante un match" loading="lazy">
+        <figcaption>Un match in corso</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/foto/web/apertura-robot.jpg" alt="Robot da gara visto da vicino" loading="lazy">
+        <figcaption>Il robot</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/foto/web/arena-pubblico.jpg" alt="Il palazzetto nel giorno di gara" loading="lazy">
+        <figcaption>L'arena</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/foto/web/box-squadra.jpg" alt="Area box di una squadra" loading="lazy">
+        <figcaption>Ai box</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/foto/web/meccanica.jpg" alt="Motori, cinghie e sensori" loading="lazy">
+        <figcaption>Motori e sensori</figcaption>
+      </figure>
+    </div>
+
+    <h2>Il gioco di quest'anno: <span class="hl">BIOBUZZ&trade;</span></h2>
+    <p class="sub">Due alleanze, quattro robot in campo, due minuti e mezzo. Si raccolgono palline e si ribalta l'alveare.</p>
+    <div class="video-box" data-yt="sUH3z5a5S9I" data-titolo="BIOBUZZ Game Animation" style="margin-top:12px;border-radius:12px">
+      <img src="https://i.ytimg.com/vi/sUH3z5a5S9I/hqdefault.jpg" alt="Anteprima: come si gioca a BIOBUZZ" width="480" height="360" loading="lazy">
+      <button type="button" aria-label="Guarda come si gioca">
+        <span class="play"><svg width="27" height="27" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="etichetta">Come si gioca · 4 min 48</span>
+      </button>
+    </div>
+    <p class="nota"><a href="../ftc.html#biobuzz" style="color:var(--accent-2)">Le regole spiegate semplici →</a></p>
+
+    <h2>Si entra da dove sei <span class="hl">già bravo</span></h2>
     <ul>
-      <li>
-        <span class="ico">🔧</span>
-        <span><b>Costruisci e programmi</b>
-        <span class="d">Disegni il robot in 3D, lo monti pezzo per pezzo, scrivi il codice e lo guidi in gara.</span></span>
-      </li>
-      <li>
-        <span class="ico">🎨</span>
-        <span><b>Dai un volto alla squadra</b>
-        <span class="d">Il logo, i colori, il quaderno di progetto che i giudici sfogliano e premiano.</span></span>
-      </li>
-      <li>
-        <span class="ico">🎬</span>
-        <span><b>Racconti la stagione</b>
-        <span class="d">Riprese ai box, montaggio, social: il video che presenta la squadra ai giudici.</span></span>
-      </li>
-      <li>
-        <span class="ico">🤝</span>
-        <span><b>Porti la robotica fuori</b>
-        <span class="d">Laboratori per bambini e anziani. In gara vale punti e premi veri.</span></span>
-      </li>
+      <li><span class="ico">🔧</span><span><b>Costruisci e programmi</b><span class="d">Disegni il robot in 3D, lo monti, scrivi il codice e lo guidi in gara.</span></span></li>
+      <li><span class="ico">🎨</span><span><b>Dai un volto alla squadra</b><span class="d">Il logo, i colori, il diario di progetto che i giudici premiano.</span></span></li>
+      <li><span class="ico">🎬</span><span><b>Racconti la stagione</b><span class="d">Riprese, montaggio, social, il video per i giudici.</span></span></li>
+      <li><span class="ico">🤝</span><span><b>Porti la robotica fuori</b><span class="d">Laboratori per bambini e anziani. In gara vale punti e premi.</span></span></li>
     </ul>
+
+    <div class="quando">
+      <p class="q">Si comincia da qui</p>
+      <p class="g">Lunedì pomeriggio,<br/>allo Spazio Baroni.</p>
+      <p class="d">Dopo la scuola. Ci si ferma a pranzo insieme, se vuoi, e si comincia da lì.</p>
+    </div>
   </div>
 
-  <!-- 3. una sola azione -->
   <div class="cta-zone">
     <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfVXMfX9aS1WCujmCmwoeu_yAfy88SnSEBbqHY2jG5tylxX4A/viewform" target="_blank" rel="noopener">Lascia i tuoi contatti →</a>
+    <div class="cta-2">
+      <a href="https://www.instagram.com/ftc_carcadonti_3s/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        @ftc_carcadonti_3s
+      </a>
+      <a href="mailto:nives.vasta@iskandinsky.it">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        Scrivici
+      </a>
+    </div>
     <p class="cta-note">Due minuti, e ti diciamo<br/>quando e dove si comincia.</p>
   </div>
 
   <footer>
     <img src="../assets/logo-kandinsky-web.png" alt="Istituto W. Kandinsky" width="72" height="66" loading="lazy" />
     <p class="scuola">Istituto Professionale per i Servizi Commerciali<br/><b>W. Kandinsky</b> · via Saponaro 20, Milano</p>
+    <p>Foto dell'arena: Stilfehler, FIRST Championship Detroit 2019, CC BY-SA 4.0 via Wikimedia Commons. Le altre sono del team.</p>
     <p>FIRST<sup>®</sup>, FIRST<sup>®</sup> Tech Challenge e BIOBUZZ&trade; sono marchi di
     FIRST<sup>®</sup> (For Inspiration and Recognition of Science and Technology).</p>
-    <p><a href="../index.html">Il sito della squadra →</a></p>
+    <p><a href="../index.html">Il sito della squadra →</a> · <a href="../parents.html">Per i genitori →</a></p>
   </footer>
 
 </div>
+<script src="../assets/video.js"></script>
 </body>
 </html>
